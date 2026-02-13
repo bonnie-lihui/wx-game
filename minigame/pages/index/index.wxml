@@ -1,0 +1,1 @@
+<canvas type="2d" id="mainCanvas" class="main-canvas" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd"></canvas>

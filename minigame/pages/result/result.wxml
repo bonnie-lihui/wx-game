@@ -1,0 +1,22 @@
+<view class="result-page">
+  <!-- 装饰云 -->
+  <view class="cloud cloud-1"></view>
+  <view class="cloud cloud-2"></view>
+
+  <!-- 结果卡片 -->
+  <view class="result-card">
+    <view class="result-emoji">{{resultEmoji}}</view>
+    <view class="result-title" style="color: {{success ? '#C82506' : '#232323'}}">{{resultText}}</view>
+    <view class="divider"></view>
+    <view class="game-info">{{gameIcon}} {{gameName}}  ·  第{{level}}关</view>
+    <view class="score-num" style="color: {{success ? '#C82506' : '#232323'}}">{{score}}</view>
+    <view class="score-label">得分</view>
+    <view class="time-text" wx:if="{{timeText}}">{{timeText}}</view>
+  </view>
+
+  <!-- 按钮区 -->
+  <view class="btn-area">
+    <view class="main-btn" bindtap="onMainBtn">{{success ? '下一关' : '再试一次'}}</view>
+    <view class="home-link" bindtap="onGoHome">返回首页</view>
+  </view>
+</view>

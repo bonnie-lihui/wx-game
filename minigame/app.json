@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index-html/index-html",
+    "pages/game/game",
+    "pages/result/result"
+  ],
+  "window": {
+    "navigationBarTitleText": "国风轻玩合集",
+    "navigationBarBackgroundColor": "#F5E9D6",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F5E9D6"
+  },
+  "permission": {
+    "scope.userInfo": {
+      "desc": "用于展示昵称与头像"
+    },
+    "scope.writePhotosAlbum": {
+      "desc": "用于保存分享海报到相册（可选）"
+    }
+  },
+  "requiredPrivateInfos": [],
+  "sitemapLocation": "sitemap.json"
+}

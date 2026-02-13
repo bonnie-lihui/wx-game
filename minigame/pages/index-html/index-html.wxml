@@ -1,0 +1,45 @@
+<!--
+  首页 HTML 版本：使用 WXML + CSS 实现
+  对比 Canvas 版本的效果
+-->
+<view class="container">
+  <!-- 标题区域 -->
+  <view class="header">
+    <text class="main-title">国风轻玩合集</text>
+    <text class="sub-title">— 经典国风益智小游戏 —</text>
+    <view class="divider"></view>
+  </view>
+
+  <!-- 卡片网格 -->
+  <view class="cards-grid">
+    <view 
+      wx:for="{{games}}" 
+      wx:key="id"
+      class="game-card {{item.unlocked ? 'unlocked' : 'locked'}}"
+      style="background: linear-gradient(135deg, {{item.colors[0]}}, {{item.colors[1]}});"
+      bindtap="onCardTap"
+      data-game="{{item}}"
+    >
+      <!-- 已解锁标记 -->
+      <view wx:if="{{item.unlocked}}" class="unlock-dot"></view>
+      
+      <!-- 卡片内容 -->
+      <text class="card-icon">{{item.icon}}</text>
+      <text class="card-name">{{item.name}}</text>
+      <text class="card-levels">{{item.levels}}</text>
+      
+      <!-- 未解锁遮罩 + 锁图标 -->
+      <view wx:if="{{!item.unlocked}}" class="lock-overlay">
+        <text class="lock-icon">🔒</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="footer-hint">
+    <text>点击卡片开始游戏</text>
+  </view>
+
+  <!-- 广告位预留 -->
+  <view class="ad-placeholder"></view>
+</view>

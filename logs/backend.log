@@ -1,0 +1,1358 @@
+server listening on port 3000
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=1, 关卡IDs=[187], 已玩字对数=1
+[levelModel] 🎯 自动选择难度：已玩1关 → easy
+[levelModel] ✅ 字对去重后选中：ID=63, 十/土
+[levelModel] ✅ 选中关卡：ID=63, 游戏=charDiff, 难度=easy, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=63, insertId=162
+[levelModel] charDiff 数据转换：same_char=十, diff_char=土
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=2, 关卡IDs=[187,63], 已玩字对数=2
+[levelModel] 🎯 自动选择难度：已玩2关 → easy
+[levelModel] 🚫 过滤重复字对：十-土 (ID=23, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=70, 工/土
+[levelModel] ✅ 选中关卡：ID=70, 游戏=charDiff, 难度=easy, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=70, insertId=163
+[levelModel] charDiff 数据转换：same_char=工, diff_char=土
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=3, 关卡IDs=[187,63,70], 已玩字对数=3
+[levelModel] 🎯 自动选择难度：已玩3关 → normal
+[levelModel] ✅ 字对去重后选中：ID=128, 士/土
+[levelModel] ✅ 选中关卡：ID=128, 游戏=charDiff, 难度=normal, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=128, insertId=164
+[levelModel] charDiff 数据转换：same_char=士, diff_char=土
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=4, 关卡IDs=[187,63,70,128], 已玩字对数=4
+[levelModel] 🎯 自动选择难度：已玩4关 → normal
+[levelModel] 🚫 过滤重复字对：士-土 (ID=108, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：土-士 (ID=141, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：土-士 (ID=81, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：土-士 (ID=101, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：土-士 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=148, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=88, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=145, 戊/戌
+[levelModel] ✅ 选中关卡：ID=145, 游戏=charDiff, 难度=normal, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=145, insertId=165
+[levelModel] charDiff 数据转换：same_char=戊, diff_char=戌
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=5, 关卡IDs=[187,63,70,128,145], 已玩字对数=5
+[levelModel] 🎯 自动选择难度：已玩5关 → normal
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=105, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：土-士 (ID=101, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：土-士 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=88, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=108, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：土-士 (ID=81, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=85, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=125, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=148, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：土-士 (ID=141, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=100, 不/丕
+[levelModel] ✅ 选中关卡：ID=100, 游戏=charDiff, 难度=normal, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=100, insertId=166
+[levelModel] charDiff 数据转换：same_char=不, diff_char=丕
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=6, 关卡IDs=[187,63,70,128,145,100], 已玩字对数=6
+[levelModel] 🎯 自动选择难度：已玩6关 → hard
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=161, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=171, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=177, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=195, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=167, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=197, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=175, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=181, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=191, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=185, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=165, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=162, 壬/王
+[levelModel] ✅ 选中关卡：ID=162, 游戏=charDiff, 难度=hard, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=162, insertId=167
+[levelModel] charDiff 数据转换：same_char=壬, diff_char=王
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=7, 关卡IDs=[187,63,70,128,145,100,162], 已玩字对数=7
+[levelModel] 🎯 自动选择难度：已玩7关 → hard
+[levelModel] 🚫 过滤重复字对：士-土 (ID=165, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=191, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壬-王 (ID=172, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=185, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=181, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=195, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=177, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壬-王 (ID=182, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=167, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=197, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=161, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=171, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壬-王 (ID=192, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=175, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=184, 末/未
+[levelModel] ✅ 选中关卡：ID=184, 游戏=charDiff, 难度=hard, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=184, insertId=168
+[levelModel] charDiff 数据转换：same_char=末, diff_char=未
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=8, 关卡IDs=[187,63,70,128,145,100,162,184], 已玩字对数=8
+[levelModel] 🎯 自动选择难度：已玩8关 → hard
+[levelModel] 🚫 过滤重复字对：壬-王 (ID=172, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壬-王 (ID=182, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=177, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=171, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=191, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：末-未 (ID=174, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=197, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=161, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：末-未 (ID=164, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=185, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=165, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=195, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=175, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=181, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：末-未 (ID=194, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=167, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壬-王 (ID=192, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=198, 辰/辱
+[levelModel] ✅ 选中关卡：ID=198, 游戏=charDiff, 难度=hard, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=198, insertId=169
+[levelModel] charDiff 数据转换：same_char=辰, diff_char=辱
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=9, 关卡IDs=[187,63,70,128,145,100,162,184,198], 已玩字对数=9
+[levelModel] 🎯 自动选择难度：已玩9关 → hard
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=191, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：末-未 (ID=194, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=197, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=165, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=161, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=181, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辰-辱 (ID=178, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壬-王 (ID=172, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辰-辱 (ID=168, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壬-王 (ID=192, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=195, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：末-未 (ID=174, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=167, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戍-戊 (ID=177, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：末-未 (ID=164, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壬-王 (ID=182, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=175, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：士-土 (ID=185, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：戊-戌 (ID=171, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辰-辱 (ID=188, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=193, 已/己
+[levelModel] ✅ 选中关卡：ID=193, 游戏=charDiff, 难度=hard, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=193, insertId=170
+[levelModel] charDiff 数据转换：same_char=已, diff_char=己
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=10, 关卡IDs=[187,63,70,128,145,100,162,184,198,193], 已玩字对数=10
+[levelModel] 🎯 自动选择难度：已玩10关 → hell
+[levelModel] ✅ 字对去重后选中：ID=201, åœŸ/å£«
+[levelModel] ✅ 选中关卡：ID=201, 游戏=charDiff, 难度=hell, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=201, insertId=171
+[levelModel] charDiff 数据转换：same_char=åœŸ, diff_char=å£«
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=11, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201], 已玩字对数=11
+[levelModel] 🎯 自动选择难度：已玩11关 → hell
+[levelModel] ✅ 字对去重后选中：ID=207, äºº/å…¥
+[levelModel] ✅ 选中关卡：ID=207, 游戏=charDiff, 难度=hell, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=207, insertId=172
+[levelModel] charDiff 数据转换：same_char=äºº, diff_char=å…¥
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=12, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207], 已玩字对数=12
+[levelModel] 🎯 自动选择难度：已玩12关 → hell
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=360, 辫/瓣
+[levelModel] ✅ 选中关卡：ID=360, 游戏=charDiff, 难度=hell, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=360, insertId=173
+[levelModel] charDiff 数据转换：same_char=辫, diff_char=瓣
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=13, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360], 已玩字对数=13
+[levelModel] 🎯 自动选择难度：已玩13关 → hell
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=302, 木/本
+[levelModel] ✅ 选中关卡：ID=302, 游戏=charDiff, 难度=hell, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=302, insertId=174
+[levelModel] charDiff 数据转换：same_char=木, diff_char=本
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=14, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302], 已玩字对数=14
+[levelModel] 🎯 自动选择难度：已玩14关 → hell
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=387, 崇/祟
+[levelModel] ✅ 选中关卡：ID=387, 游戏=charDiff, 难度=hell, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=387, insertId=175
+[levelModel] charDiff 数据转换：same_char=崇, diff_char=祟
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=15, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387], 已玩字对数=15
+[levelModel] 🎯 自动选择难度：已玩15关 → hell
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=382, 梁/粱
+[levelModel] ✅ 选中关卡：ID=382, 游戏=charDiff, 难度=hell, 关卡序号=0, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=0, levelId=382, insertId=176
+[levelModel] charDiff 数据转换：same_char=梁, diff_char=粱
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=16, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382], 已玩字对数=16
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=19, 少/小
+[levelModel] ✅ 选中关卡：ID=19, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=19, insertId=177
+[levelModel] charDiff 数据转换：same_char=少, diff_char=小
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=17, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19], 已玩字对数=17
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=86, 目/日
+[levelModel] ✅ 选中关卡：ID=86, 游戏=charDiff, 难度=easy, 关卡序号=2, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=2, levelId=86, insertId=178
+[levelModel] charDiff 数据转换：same_char=目, diff_char=日
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=18, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86], 已玩字对数=18
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=54, 仑/令
+[levelModel] ✅ 选中关卡：ID=54, 游戏=charDiff, 难度=easy, 关卡序号=3, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=3, levelId=54, insertId=179
+[levelModel] charDiff 数据转换：same_char=仑, diff_char=令
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=19, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54], 已玩字对数=19
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=135, 暮/慕
+[levelModel] ✅ 选中关卡：ID=135, 游戏=charDiff, 难度=normal, 关卡序号=4, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=4, levelId=135, insertId=180
+[levelModel] charDiff 数据转换：same_char=暮, diff_char=慕
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=20, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135], 已玩字对数=20
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=166, 笼/拢
+[levelModel] ✅ 选中关卡：ID=166, 游戏=charDiff, 难度=normal, 关卡序号=5, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=5, levelId=166, insertId=181
+[levelModel] charDiff 数据转换：same_char=笼, diff_char=拢
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=21, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166], 已玩字对数=21
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=109, 端/瑞
+[levelModel] ✅ 选中关卡：ID=109, 游戏=charDiff, 难度=normal, 关卡序号=6, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=6, levelId=109, insertId=182
+[levelModel] charDiff 数据转换：same_char=端, diff_char=瑞
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=22, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109], 已玩字对数=22
+[levelModel] 🚫 过滤重复字对：竣-峻 (ID=265, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=229, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=259, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=243, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：端-瑞 (ID=246, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=219, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=266, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=255, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梁-粱 (ID=241, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辫-瓣 (ID=211, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=263, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=221, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=231, 栽/裁
+[levelModel] ✅ 选中关卡：ID=231, 游戏=charDiff, 难度=hard, 关卡序号=7, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=7, levelId=231, insertId=183
+[levelModel] charDiff 数据转换：same_char=栽, diff_char=裁
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=23, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231], 已玩字对数=23
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=255, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：竣-峻 (ID=265, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=259, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=243, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=229, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梁-粱 (ID=241, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=221, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辫-瓣 (ID=211, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=263, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=219, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：端-瑞 (ID=246, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=266, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=252, 漫/幔
+[levelModel] ✅ 选中关卡：ID=252, 游戏=charDiff, 难度=hard, 关卡序号=8, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=8, levelId=252, insertId=184
+[levelModel] charDiff 数据转换：same_char=漫, diff_char=幔
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=24, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252], 已玩字对数=24
+[levelModel] 🚫 过滤重复字对：竣-峻 (ID=265, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=263, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=219, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：端-瑞 (ID=246, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=255, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辫-瓣 (ID=211, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梁-粱 (ID=241, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=243, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=221, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=259, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=266, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=229, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=258, 搏/博
+[levelModel] ✅ 选中关卡：ID=258, 游戏=charDiff, 难度=hard, 关卡序号=9, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=9, levelId=258, insertId=185
+[levelModel] charDiff 数据转换：same_char=搏, diff_char=博
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=25, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258], 已玩字对数=25
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=255, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=221, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=243, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=229, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=219, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=266, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：端-瑞 (ID=246, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辫-瓣 (ID=211, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：竣-峻 (ID=265, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梁-粱 (ID=241, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=263, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=259, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=239, 晴/睛
+[levelModel] ✅ 选中关卡：ID=239, 游戏=charDiff, 难度=hard, 关卡序号=10, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=10, levelId=239, insertId=186
+[levelModel] charDiff 数据转换：same_char=晴, diff_char=睛
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=26, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239], 已玩字对数=26
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=307, 白/自
+[levelModel] ✅ 选中关卡：ID=307, 游戏=charDiff, 难度=hell, 关卡序号=11, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=11, levelId=307, insertId=187
+[levelModel] charDiff 数据转换：same_char=白, diff_char=自
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=27, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307], 已玩字对数=27
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=386, 拢/扰
+[levelModel] ✅ 选中关卡：ID=386, 游戏=charDiff, 难度=hell, 关卡序号=12, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=12, levelId=386, insertId=188
+[levelModel] charDiff 数据转换：same_char=拢, diff_char=扰
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=28, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386], 已玩字对数=28
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=354, 拔/拨
+[levelModel] ✅ 选中关卡：ID=354, 游戏=charDiff, 难度=hell, 关卡序号=13, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=13, levelId=354, insertId=189
+[levelModel] charDiff 数据转换：same_char=拔, diff_char=拨
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=29, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354], 已玩字对数=29
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=312, 又/叉
+[levelModel] ✅ 选中关卡：ID=312, 游戏=charDiff, 难度=hell, 关卡序号=14, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=14, levelId=312, insertId=190
+[levelModel] charDiff 数据转换：same_char=又, diff_char=叉
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=30, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354,312], 已玩字对数=30
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=366, 度/渡
+[levelModel] ✅ 选中关卡：ID=366, 游戏=charDiff, 难度=hell, 关卡序号=15, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=15, levelId=366, insertId=191
+[levelModel] charDiff 数据转换：same_char=度, diff_char=渡
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=31, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354,312,366], 已玩字对数=31
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=344, 万/方
+[levelModel] ✅ 选中关卡：ID=344, 游戏=charDiff, 难度=hell, 关卡序号=16, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=16, levelId=344, insertId=192
+[levelModel] charDiff 数据转换：same_char=万, diff_char=方
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=32, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344], 已玩字对数=32
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=346, 心/必
+[levelModel] ✅ 选中关卡：ID=346, 游戏=charDiff, 难度=hell, 关卡序号=17, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=17, levelId=346, insertId=193
+[levelModel] charDiff 数据转换：same_char=心, diff_char=必
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=33, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346], 已玩字对数=33
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=363, 暇/瑕
+[levelModel] ✅ 选中关卡：ID=363, 游戏=charDiff, 难度=hell, 关卡序号=18, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=18, levelId=363, insertId=194
+[levelModel] charDiff 数据转换：same_char=暇, diff_char=瑕
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=34, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363], 已玩字对数=34
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=328, 血/皿
+[levelModel] ✅ 选中关卡：ID=328, 游戏=charDiff, 难度=hell, 关卡序号=19, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=19, levelId=328, insertId=195
+[levelModel] charDiff 数据转换：same_char=血, diff_char=皿
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=35, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328], 已玩字对数=35
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=381, 概/慨
+[levelModel] ✅ 选中关卡：ID=381, 游戏=charDiff, 难度=hell, 关卡序号=20, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=20, levelId=381, insertId=196
+[levelModel] charDiff 数据转换：same_char=概, diff_char=慨
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=36, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381], 已玩字对数=36
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=304, 田/由
+[levelModel] ✅ 选中关卡：ID=304, 游戏=charDiff, 难度=hell, 关卡序号=21, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=21, levelId=304, insertId=197
+[levelModel] charDiff 数据转换：same_char=田, diff_char=由
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=37, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304], 已玩字对数=37
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=383, 蓝/篮
+[levelModel] ✅ 选中关卡：ID=383, 游戏=charDiff, 难度=hell, 关卡序号=22, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=22, levelId=383, insertId=198
+[levelModel] charDiff 数据转换：same_char=蓝, diff_char=篮
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=38, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=38
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=53, 仑/仓
+[levelModel] ✅ 选中关卡：ID=53, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=53, insertId=199
+[levelModel] charDiff 数据转换：same_char=仑, diff_char=仓
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=39, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=39
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=35, 冈/网
+[levelModel] ✅ 选中关卡：ID=35, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=35, insertId=200
+[levelModel] charDiff 数据转换：same_char=冈, diff_char=网
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=40, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=40
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=65, 亨/享
+[levelModel] ✅ 选中关卡：ID=65, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=65, insertId=201
+[levelModel] charDiff 数据转换：same_char=亨, diff_char=享
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=41, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,86,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=41
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=62, 天/矢
+[levelModel] ✅ 选中关卡：ID=62, 游戏=charDiff, 难度=easy, 关卡序号=2, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=2, levelId=62, insertId=202
+[levelModel] charDiff 数据转换：same_char=天, diff_char=矢
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=42, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,86,62,54,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=42
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=41, 天/夫
+[levelModel] ✅ 选中关卡：ID=41, 游戏=charDiff, 难度=easy, 关卡序号=3, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=3, levelId=41, insertId=203
+[levelModel] charDiff 数据转换：same_char=天, diff_char=夫
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=43, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,86,62,54,41,135,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=43
+[levelModel] 🚫 过滤重复字对：博-搏 (ID=191, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：瑞-端 (ID=171, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：篮-蓝 (ID=160, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：扰-拢 (ID=165, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：睛-晴 (ID=143, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：漫-幔 (ID=115, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：搏-博 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慨-概 (ID=156, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：幔-漫 (ID=183, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=190, 躁/燥
+[levelModel] ✅ 选中关卡：ID=190, 游戏=charDiff, 难度=normal, 关卡序号=4, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=4, levelId=190, insertId=204
+[levelModel] charDiff 数据转换：same_char=躁, diff_char=燥
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=44, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,86,62,54,41,135,190,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=44
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=96, 区/巨
+[levelModel] ✅ 选中关卡：ID=96, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=96, insertId=205
+[levelModel] charDiff 数据转换：same_char=区, diff_char=巨
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=45, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,86,62,54,41,135,190,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=45
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=50, 爪/瓜
+[levelModel] ✅ 选中关卡：ID=50, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=50, insertId=206
+[levelModel] charDiff 数据转换：same_char=爪, diff_char=瓜
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=46, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,86,62,54,41,135,190,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=46
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=40, 夭/天
+[levelModel] ✅ 选中关卡：ID=40, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=40, insertId=207
+[levelModel] charDiff 数据转换：same_char=夭, diff_char=天
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=47, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,86,62,54,41,135,190,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=47
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=82, 已/巳
+[levelModel] ✅ 选中关卡：ID=82, 游戏=charDiff, 难度=easy, 关卡序号=2, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=2, levelId=82, insertId=208
+[levelModel] charDiff 数据转换：same_char=已, diff_char=巳
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=48, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,86,62,82,54,41,135,190,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=48
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=30, 石/右
+[levelModel] ✅ 选中关卡：ID=30, 游戏=charDiff, 难度=easy, 关卡序号=3, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=3, levelId=30, insertId=209
+[levelModel] charDiff 数据转换：same_char=石, diff_char=右
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=49, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,86,62,82,54,41,30,135,190,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=49
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：搏-博 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：瑞-端 (ID=171, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：睛-晴 (ID=143, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：漫-幔 (ID=115, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：博-搏 (ID=191, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慨-概 (ID=156, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：扰-拢 (ID=165, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：篮-蓝 (ID=160, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：幔-漫 (ID=183, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=194, 礴/薄
+[levelModel] ✅ 选中关卡：ID=194, 游戏=charDiff, 难度=normal, 关卡序号=4, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=4, levelId=194, insertId=210
+[levelModel] charDiff 数据转换：same_char=礴, diff_char=薄
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=50, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,86,62,82,54,41,30,135,190,194,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=50
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=84, 未/末
+[levelModel] ✅ 选中关卡：ID=84, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=84, insertId=211
+[levelModel] charDiff 数据转换：same_char=未, diff_char=末
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=51, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,86,62,82,54,41,30,135,190,194,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=51
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=39, 戈/弋
+[levelModel] ✅ 选中关卡：ID=39, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=39, insertId=212
+[levelModel] charDiff 数据转换：same_char=戈, diff_char=弋
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=52, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,54,41,30,135,190,194,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=52
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=25, 生/牛
+[levelModel] ✅ 选中关卡：ID=25, 游戏=charDiff, 难度=easy, 关卡序号=2, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=2, levelId=25, insertId=213
+[levelModel] charDiff 数据转换：same_char=生, diff_char=牛
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=53, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,135,190,194,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=53
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=64, 丛/从
+[levelModel] ✅ 选中关卡：ID=64, 游戏=charDiff, 难度=easy, 关卡序号=3, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=3, levelId=64, insertId=214
+[levelModel] charDiff 数据转换：same_char=丛, diff_char=从
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=54, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=54
+[levelModel] 🚫 过滤重复字对：搏-博 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：瑞-端 (ID=171, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：幔-漫 (ID=183, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：篮-蓝 (ID=160, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：扰-拢 (ID=165, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：博-搏 (ID=191, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慨-概 (ID=156, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：漫-幔 (ID=115, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：睛-晴 (ID=143, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=195, 藉/籍
+[levelModel] ✅ 选中关卡：ID=195, 游戏=charDiff, 难度=normal, 关卡序号=4, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=4, levelId=195, insertId=215
+[levelModel] charDiff 数据转换：same_char=藉, diff_char=籍
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=55, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=55
+[levelModel] 🚫 过滤重复字对：慨-概 (ID=156, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：博-搏 (ID=191, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：幔-漫 (ID=183, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：搏-博 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：篮-蓝 (ID=160, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：瑞-端 (ID=171, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：扰-拢 (ID=165, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：睛-晴 (ID=143, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：漫-幔 (ID=115, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=123, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=125, 梢/悄
+[levelModel] ✅ 选中关卡：ID=125, 游戏=charDiff, 难度=normal, 关卡序号=5, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=5, levelId=125, insertId=216
+[levelModel] charDiff 数据转换：same_char=梢, diff_char=悄
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=56, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=56
+[levelModel] 🚫 过滤重复字对：睛-晴 (ID=143, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：瑞-端 (ID=171, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慨-概 (ID=156, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：幔-漫 (ID=183, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：博-搏 (ID=191, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：篮-蓝 (ID=160, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：漫-幔 (ID=115, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：扰-拢 (ID=165, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：搏-博 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=123, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=114, 捧/棒
+[levelModel] ✅ 选中关卡：ID=114, 游戏=charDiff, 难度=normal, 关卡序号=6, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=6, levelId=114, insertId=217
+[levelModel] charDiff 数据转换：same_char=捧, diff_char=棒
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=57, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=57
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=259, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暇-瑕 (ID=214, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：概-慨 (ID=227, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=255, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：捧-棒 (ID=251, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：拢-扰 (ID=232, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=266, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=263, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：燥-躁 (ID=236, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：蓝-篮 (ID=228, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=229, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：端-瑞 (ID=246, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梢-悄 (ID=262, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：竣-峻 (ID=265, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梁-粱 (ID=241, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辫-瓣 (ID=211, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=221, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：度-渡 (ID=216, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=219, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=260, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=243, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=284, 池/驰
+[levelModel] ✅ 选中关卡：ID=284, 游戏=charDiff, 难度=hard, 关卡序号=7, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=7, levelId=284, insertId=218
+[levelModel] charDiff 数据转换：same_char=池, diff_char=驰
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=58, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=58
+[levelModel] 🚫 过滤重复字对：拢-扰 (ID=232, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梢-悄 (ID=262, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：概-慨 (ID=227, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=259, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=266, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=229, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暇-瑕 (ID=214, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=255, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：端-瑞 (ID=246, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=219, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梁-粱 (ID=241, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=260, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辫-瓣 (ID=211, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=221, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=243, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：捧-棒 (ID=251, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：燥-躁 (ID=236, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：蓝-篮 (ID=228, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=263, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：度-渡 (ID=216, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：竣-峻 (ID=265, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=275, 源/园
+[levelModel] ✅ 选中关卡：ID=275, 游戏=charDiff, 难度=hard, 关卡序号=8, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=8, levelId=275, insertId=219
+[levelModel] charDiff 数据转换：same_char=源, diff_char=园
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=59, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=59
+[levelModel] 🚫 过滤重复字对：燥-躁 (ID=236, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=266, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辫-瓣 (ID=211, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：概-慨 (ID=227, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=263, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=219, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=255, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=229, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：捧-棒 (ID=251, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=260, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=221, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梁-粱 (ID=241, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：度-渡 (ID=216, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：拢-扰 (ID=232, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：蓝-篮 (ID=228, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=259, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梢-悄 (ID=262, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=243, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：竣-峻 (ID=265, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暇-瑕 (ID=214, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：端-瑞 (ID=246, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=268, 缝/逢
+[levelModel] ✅ 选中关卡：ID=268, 游戏=charDiff, 难度=hard, 关卡序号=9, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=9, levelId=268, insertId=220
+[levelModel] charDiff 数据转换：same_char=缝, diff_char=逢
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=60, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=60
+[levelModel] 🚫 过滤重复字对：燥-躁 (ID=236, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=266, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：端-瑞 (ID=246, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=263, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=221, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：度-渡 (ID=216, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：竣-峻 (ID=265, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辫-瓣 (ID=211, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：捧-棒 (ID=251, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：概-慨 (ID=227, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梢-悄 (ID=262, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=229, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=243, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暇-瑕 (ID=214, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梁-粱 (ID=241, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：拢-扰 (ID=232, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=259, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=260, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=255, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：蓝-篮 (ID=228, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=267, 薯/署
+[levelModel] ✅ 选中关卡：ID=267, 游戏=charDiff, 难度=hard, 关卡序号=9, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=9, levelId=267, insertId=221
+[levelModel] charDiff 数据转换：same_char=薯, diff_char=署
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=61, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=61
+[levelModel] 🚫 过滤重复字对：梁-粱 (ID=241, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：竣-峻 (ID=265, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：蓝-篮 (ID=228, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=243, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：概-慨 (ID=227, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=259, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暇-瑕 (ID=214, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：捧-棒 (ID=251, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=229, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：拢-扰 (ID=232, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=263, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：辫-瓣 (ID=211, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：端-瑞 (ID=246, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：燥-躁 (ID=236, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=260, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=266, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：梢-悄 (ID=262, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=255, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=221, difficulty=hard)
+[levelModel] 🚫 过滤重复字对：度-渡 (ID=216, difficulty=hard)
+[levelModel] ✅ 字对去重后选中：ID=238, 带/戴
+[levelModel] ✅ 选中关卡：ID=238, 游戏=charDiff, 难度=hard, 关卡序号=10, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=10, levelId=238, insertId=222
+[levelModel] charDiff 数据转换：same_char=带, diff_char=戴
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=62, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=62
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：石-右 (ID=331, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：冈-网 (ID=336, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：带-戴 (ID=371, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：丛-从 (ID=340, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：燥-躁 (ID=364, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：天-矢 (ID=338, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：亨-享 (ID=327, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：爪-瓜 (ID=341, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：已-巳 (ID=295, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：天-夫 (ID=301, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：未-末 (ID=292, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=367, 坐/座
+[levelModel] ✅ 选中关卡：ID=367, 游戏=charDiff, 难度=hell, 关卡序号=11, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=11, levelId=367, insertId=223
+[levelModel] charDiff 数据转换：same_char=坐, diff_char=座
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=63, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,354,312,366,344,346,363,328,381,304,383], 已玩字对数=63
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：亨-享 (ID=327, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：燥-躁 (ID=364, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：已-巳 (ID=295, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：石-右 (ID=331, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：天-矢 (ID=338, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：冈-网 (ID=336, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：带-戴 (ID=371, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：爪-瓜 (ID=341, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：天-夫 (ID=301, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：丛-从 (ID=340, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：未-末 (ID=292, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=359, 辨/辩
+[levelModel] ✅ 选中关卡：ID=359, 游戏=charDiff, 难度=hell, 关卡序号=12, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=12, levelId=359, insertId=224
+[levelModel] charDiff 数据转换：same_char=辨, diff_char=辩
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=64, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,354,312,366,344,346,363,328,381,304,383], 已玩字对数=64
+[levelModel] 🚫 过滤重复字对：木-术 (ID=303, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：天-矢 (ID=338, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：丛-从 (ID=340, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：井-开 (ID=337, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：爪-瓜 (ID=341, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：天-夫 (ID=301, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：暮-幕 (ID=384, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：亨-享 (ID=327, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：冈-网 (ID=336, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：带-戴 (ID=371, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：目-日 (ID=308, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：园-圆 (ID=370, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：未-末 (ID=292, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：侯-候 (ID=351, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：燥-躁 (ID=364, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：已-巳 (ID=295, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：栽-裁 (ID=385, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：壁-璧 (ID=374, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：石-右 (ID=331, difficulty=hell)
+[levelModel] 🚫 过滤重复字对：晴-睛 (ID=373, difficulty=hell)
+[levelModel] ✅ 字对去重后选中：ID=293, 曰/日
+[levelModel] ✅ 选中关卡：ID=293, 游戏=charDiff, 难度=hell, 关卡序号=12, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=12, levelId=293, insertId=225
+[levelModel] charDiff 数据转换：same_char=曰, diff_char=日
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=65, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=65
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：曰-日 (ID=85, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=61, 失/矢
+[levelModel] ✅ 选中关卡：ID=61, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=61, insertId=226
+[levelModel] charDiff 数据转换：same_char=失, diff_char=矢
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=66, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,86,62,82,25,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=66
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：曰-日 (ID=85, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=95, 止/心
+[levelModel] ✅ 选中关卡：ID=95, 游戏=charDiff, 难度=easy, 关卡序号=2, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=2, levelId=95, insertId=227
+[levelModel] charDiff 数据转换：same_char=止, diff_char=心
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=67, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,86,62,82,25,95,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=67
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：曰-日 (ID=85, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=71, 壶/壸
+[levelModel] ✅ 选中关卡：ID=71, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=71, insertId=228
+[levelModel] charDiff 数据转换：same_char=壶, diff_char=壸
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=68, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,71,86,62,82,25,95,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=68
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：曰-日 (ID=85, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=10, 士/干
+[levelModel] ✅ 选中关卡：ID=10, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=10, insertId=229
+[levelModel] charDiff 数据转换：same_char=士, diff_char=干
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=69, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,71,10,86,62,82,25,95,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=69
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：曰-日 (ID=85, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=21, 日/月
+[levelModel] ✅ 选中关卡：ID=21, 游戏=charDiff, 难度=easy, 关卡序号=2, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=2, levelId=21, insertId=230
+[levelModel] charDiff 数据转换：same_char=日, diff_char=月
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=70, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,71,10,86,62,82,25,95,21,54,41,30,64,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=70
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：曰-日 (ID=85, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=73, 竟/竞
+[levelModel] ✅ 选中关卡：ID=73, 游戏=charDiff, 难度=easy, 关卡序号=3, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=3, levelId=73, insertId=231
+[levelModel] charDiff 数据转换：same_char=竟, diff_char=竞
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=71, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,71,10,86,62,82,25,95,21,54,41,30,64,73,135,190,194,195,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=71
+[levelModel] 🚫 过滤重复字对：漫-幔 (ID=115, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：座-坐 (ID=137, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：篮-蓝 (ID=160, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：戴-带 (ID=141, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：扰-拢 (ID=165, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：幔-漫 (ID=183, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：睛-晴 (ID=143, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=123, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：搏-博 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：源-园 (ID=208, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：池-驰 (ID=155, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：瑞-端 (ID=171, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：逢-缝 (ID=131, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：棒-捧 (ID=181, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薯-署 (ID=130, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慨-概 (ID=156, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：博-搏 (ID=191, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=196, 蜜/密
+[levelModel] ✅ 选中关卡：ID=196, 游戏=charDiff, 难度=normal, 关卡序号=4, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=4, levelId=196, insertId=232
+[levelModel] charDiff 数据转换：same_char=蜜, diff_char=密
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=72, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,71,10,86,62,82,25,95,21,54,41,30,64,73,135,190,194,195,196,166,125,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=72
+[levelModel] 🚫 过滤重复字对：搏-博 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：扰-拢 (ID=165, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：篮-蓝 (ID=160, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=123, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：瑞-端 (ID=171, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：座-坐 (ID=137, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：博-搏 (ID=191, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薯-署 (ID=130, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：幔-漫 (ID=183, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：池-驰 (ID=155, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：漫-幔 (ID=115, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：棒-捧 (ID=181, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：密-蜜 (ID=124, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：逢-缝 (ID=131, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：睛-晴 (ID=143, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：源-园 (ID=208, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：戴-带 (ID=141, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慨-概 (ID=156, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=200, 俊/峻
+[levelModel] ✅ 选中关卡：ID=200, 游戏=charDiff, 难度=normal, 关卡序号=5, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=5, levelId=200, insertId=233
+[levelModel] charDiff 数据转换：same_char=俊, diff_char=峻
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=73, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,71,10,86,62,82,25,95,21,54,41,30,64,73,135,190,194,195,196,166,125,200,109,114,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=73
+[levelModel] 🚫 过滤重复字对：慨-概 (ID=156, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：棒-捧 (ID=181, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：谦-歉 (ID=118, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：博-搏 (ID=191, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：扰-拢 (ID=165, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：搏-博 (ID=121, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薄-簿 (ID=122, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：俏-悄 (ID=126, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：薯-署 (ID=130, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：粱-梁 (ID=158, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：崇-祟 (ID=106, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：幔-漫 (ID=183, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：戴-带 (ID=141, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：峻-俊 (ID=127, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：睛-晴 (ID=143, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：籍-藉 (ID=123, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：署-暑 (ID=129, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：座-坐 (ID=137, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：篮-蓝 (ID=160, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：祟-崇 (ID=167, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：池-驰 (ID=155, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：源-园 (ID=208, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：瑞-端 (ID=171, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：逢-缝 (ID=131, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：慕-暮 (ID=203, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：漫-幔 (ID=115, difficulty=normal)
+[levelModel] 🚫 过滤重复字对：密-蜜 (ID=124, difficulty=normal)
+[levelModel] ✅ 字对去重后选中：ID=151, 切/沏
+[levelModel] ✅ 选中关卡：ID=151, 游戏=charDiff, 难度=normal, 关卡序号=6, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=6, levelId=151, insertId=234
+[levelModel] charDiff 数据转换：same_char=切, diff_char=沏
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=74, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,71,10,86,62,82,25,95,21,54,41,30,64,73,135,190,194,195,196,166,125,200,109,114,151,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=74
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：曰-日 (ID=85, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=34, 内/肉
+[levelModel] ✅ 选中关卡：ID=34, 游戏=charDiff, 难度=easy, 关卡序号=1, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=1, levelId=34, insertId=235
+[levelModel] charDiff 数据转换：same_char=内, diff_char=肉
+[levelModel] 🔍 查询历史记录：openid=guest, game=charDiff, 已玩关卡数=75, 关卡IDs=[187,63,70,128,145,100,162,184,198,193,201,207,360,302,387,382,19,53,35,65,96,50,40,84,39,61,71,10,34,86,62,82,25,95,21,54,41,30,64,73,135,190,194,195,196,166,125,200,109,114,151,231,284,252,275,258,268,267,239,238,307,367,386,359,293,354,312,366,344,346,363,328,381,304,383], 已玩字对数=75
+[levelModel] 🚫 过滤重复字对：白-自 (ID=29, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：又-叉 (ID=90, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：拔-拨 (ID=76, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：田-由 (ID=26, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-本 (ID=43, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：曰-日 (ID=85, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：血-皿 (ID=66, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：本-木 (ID=99, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：心-必 (ID=59, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：木-术 (ID=44, difficulty=easy)
+[levelModel] 🚫 过滤重复字对：万-方 (ID=57, difficulty=easy)
+[levelModel] ✅ 字对去重后选中：ID=75, 折/拆
+[levelModel] ✅ 选中关卡：ID=75, 游戏=charDiff, 难度=easy, 关卡序号=2, answer=N/A
+[levelModel] ✅ 记录关卡历史成功：openid=guest, game=charDiff, level=2, levelId=75, insertId=236
+[levelModel] charDiff 数据转换：same_char=折, diff_char=拆
+[levelModel] ❌ 查询历史记录失败： {
+  openid: 'guest',
+  gameId: 'poetryConnect',
+  error: "Unknown column 'l.same_char' in 'field list'",
+  code: 'ER_BAD_FIELD_ERROR'
+}
+[levelController.getLevelData] Error: Unknown column 'theme_id' in 'where clause'
+    at PromisePool.query (/Users/momo/Desktop/vx-game/server/node_modules/mysql2/promise.js:341:22)
+    at Object.getLevelData (/Users/momo/Desktop/vx-game/server/model/levelModel.js:111:29)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async getLevelData (/Users/momo/Desktop/vx-game/server/controller/levelController.js:25:18) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sql: "SELECT * FROM t_level_poetry_connect WHERE difficulty = 'easy' AND (theme_id = 'null' OR theme_id IS NULL) ORDER BY RAND()",
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'theme_id' in 'where clause'"
+}
+[levelModel] ❌ 查询历史记录失败： {
+  openid: 'guest',
+  gameId: 'poetryConnect',
+  error: "Unknown column 'l.same_char' in 'field list'",
+  code: 'ER_BAD_FIELD_ERROR'
+}
+[levelController.getLevelData] Error: Unknown column 'theme_id' in 'where clause'
+    at PromisePool.query (/Users/momo/Desktop/vx-game/server/node_modules/mysql2/promise.js:341:22)
+    at Object.getLevelData (/Users/momo/Desktop/vx-game/server/model/levelModel.js:111:29)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async getLevelData (/Users/momo/Desktop/vx-game/server/controller/levelController.js:25:18) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sql: "SELECT * FROM t_level_poetry_connect WHERE difficulty = 'easy' AND (theme_id = 'null' OR theme_id IS NULL) ORDER BY RAND()",
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'theme_id' in 'where clause'"
+}
+[levelModel] ❌ 查询历史记录失败： {
+  openid: 'guest',
+  gameId: 'poetryConnect',
+  error: "Unknown column 'l.same_char' in 'field list'",
+  code: 'ER_BAD_FIELD_ERROR'
+}
+[levelController.getLevelData] Error: Unknown column 'theme_id' in 'where clause'
+    at PromisePool.query (/Users/momo/Desktop/vx-game/server/node_modules/mysql2/promise.js:341:22)
+    at Object.getLevelData (/Users/momo/Desktop/vx-game/server/model/levelModel.js:111:29)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async getLevelData (/Users/momo/Desktop/vx-game/server/controller/levelController.js:25:18) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sql: "SELECT * FROM t_level_poetry_connect WHERE difficulty = 'easy' AND (theme_id = 'null' OR theme_id IS NULL) ORDER BY RAND()",
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'theme_id' in 'where clause'"
+}
+[levelModel] ❌ 查询历史记录失败： {
+  openid: 'guest',
+  gameId: 'wordFind',
+  error: "Unknown column 'l.same_char' in 'field list'",
+  code: 'ER_BAD_FIELD_ERROR'
+}
+[levelController.getLevelData] Error: Unknown column 'theme_id' in 'where clause'
+    at PromisePool.query (/Users/momo/Desktop/vx-game/server/node_modules/mysql2/promise.js:341:22)
+    at Object.getLevelData (/Users/momo/Desktop/vx-game/server/model/levelModel.js:111:29)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async getLevelData (/Users/momo/Desktop/vx-game/server/controller/levelController.js:25:18) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sql: "SELECT * FROM t_level_word_find WHERE difficulty = 'easy' AND (theme_id = 'null' OR theme_id IS NULL) ORDER BY RAND()",
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'theme_id' in 'where clause'"
+}
+[levelModel] ❌ 查询历史记录失败： {
+  openid: 'guest',
+  gameId: 'wordFind',
+  error: "Unknown column 'l.same_char' in 'field list'",
+  code: 'ER_BAD_FIELD_ERROR'
+}
+[levelController.getLevelData] Error: Unknown column 'theme_id' in 'where clause'
+    at PromisePool.query (/Users/momo/Desktop/vx-game/server/node_modules/mysql2/promise.js:341:22)
+    at Object.getLevelData (/Users/momo/Desktop/vx-game/server/model/levelModel.js:111:29)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async getLevelData (/Users/momo/Desktop/vx-game/server/controller/levelController.js:25:18) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sql: "SELECT * FROM t_level_word_find WHERE difficulty = 'easy' AND (theme_id = 'null' OR theme_id IS NULL) ORDER BY RAND()",
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'theme_id' in 'where clause'"
+}
+[levelModel] ❌ 查询历史记录失败： {
+  openid: 'guest',
+  gameId: 'wordFind',
+  error: "Unknown column 'l.same_char' in 'field list'",
+  code: 'ER_BAD_FIELD_ERROR'
+}
+[levelController.getLevelData] Error: Unknown column 'theme_id' in 'where clause'
+    at PromisePool.query (/Users/momo/Desktop/vx-game/server/node_modules/mysql2/promise.js:341:22)
+    at Object.getLevelData (/Users/momo/Desktop/vx-game/server/model/levelModel.js:111:29)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async getLevelData (/Users/momo/Desktop/vx-game/server/controller/levelController.js:25:18) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sql: "SELECT * FROM t_level_word_find WHERE difficulty = 'easy' AND (theme_id = 'null' OR theme_id IS NULL) ORDER BY RAND()",
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'theme_id' in 'where clause'"
+}
+[levelModel] ❌ 查询历史记录失败： {
+  openid: 'guest',
+  gameId: 'wordFind',
+  error: "Unknown column 'l.same_char' in 'field list'",
+  code: 'ER_BAD_FIELD_ERROR'
+}
+[levelController.getLevelData] Error: Unknown column 'theme_id' in 'where clause'
+    at PromisePool.query (/Users/momo/Desktop/vx-game/server/node_modules/mysql2/promise.js:341:22)
+    at Object.getLevelData (/Users/momo/Desktop/vx-game/server/model/levelModel.js:111:29)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+    at async getLevelData (/Users/momo/Desktop/vx-game/server/controller/levelController.js:25:18) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sql: "SELECT * FROM t_level_word_find WHERE difficulty = 'easy' AND (theme_id = 'null' OR theme_id IS NULL) ORDER BY RAND()",
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'theme_id' in 'where clause'"
+}

@@ -1,0 +1,35 @@
+server listening on port 3000
+[levelModel] 📊 查询关卡：game=wordFind, difficulty=easy, level=1, themeId=null
+[levelModel] ✅ 选中关卡：ID=74, 难度=easy, level=1
+[levelModel] 📊 查询关卡：game=wordFind, difficulty=easy, level=2, themeId=null
+[levelModel] ✅ 选中关卡：ID=174, 难度=easy, level=2
+[levelModel] 📊 查询关卡：game=wordFind, difficulty=easy, level=3, themeId=null
+[levelModel] ✅ 选中关卡：ID=94, 难度=easy, level=3
+[levelModel] 📊 查询关卡：game=wordFind, difficulty=normal, level=4, themeId=null
+[levelModel] ✅ 选中关卡：ID=349, 难度=normal, level=4
+[levelModel] 📊 查询关卡：game=wordFind, difficulty=normal, level=5, themeId=null
+[levelModel] ✅ 选中关卡：ID=331, 难度=normal, level=5
+[levelModel] 📊 查询关卡：game=charDiff, difficulty=easy, level=1, themeId=null
+[levelModel] ✅ 选中关卡：ID=8, 难度=easy, level=1
+[levelModel] charDiff 数据转换：same_char=工, diff_char=土
+[levelModel] 📊 查询关卡：game=charDiff, difficulty=easy, level=2, themeId=null
+[levelModel] ✅ 选中关卡：ID=48, 难度=easy, level=2
+[levelModel] charDiff 数据转换：same_char=乌, diff_char=鸟
+[levelModel] 📊 查询关卡：game=poetryConnect, difficulty=easy, level=1, themeId=null
+[levelModel] ✅ 选中关卡：ID=31, 难度=easy, level=1
+[levelModel] 📊 查询关卡：game=poetryConnect, difficulty=easy, level=1, themeId=null
+[levelModel] ✅ 选中关卡：ID=103, 难度=easy, level=1
+[levelModel] 📊 查询关卡：game=poetryConnect, difficulty=easy, level=1, themeId=null
+[levelModel] ✅ 选中关卡：ID=27, 难度=easy, level=1
+[levelModel] 📊 查询关卡：game=poetryConnect, difficulty=easy, level=2, themeId=null
+[levelModel] ✅ 选中关卡：ID=171, 难度=easy, level=2
+[levelModel] 📊 查询关卡：game=poetryConnect, difficulty=easy, level=3, themeId=null
+[levelModel] ✅ 选中关卡：ID=125, 难度=easy, level=3
+[levelModel] 📊 查询关卡：game=poetryConnect, difficulty=normal, level=4, themeId=null
+[levelModel] ✅ 选中关卡：ID=260, 难度=normal, level=4
+[levelModel] 📊 查询关卡：game=poetryConnect, difficulty=normal, level=5, themeId=null
+[levelModel] ✅ 选中关卡：ID=339, 难度=normal, level=5
+[levelModel] 📊 查询关卡：game=poetryConnect, difficulty=normal, level=6, themeId=null
+[levelModel] ✅ 选中关卡：ID=235, 难度=normal, level=6
+[levelModel] 📊 查询关卡：game=poetryConnect, difficulty=hard, level=7, themeId=null
+[levelModel] ✅ 选中关卡：ID=477, 难度=hard, level=7

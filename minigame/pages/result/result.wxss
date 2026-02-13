@@ -1,0 +1,145 @@
+page {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #FFF8EE 0%, #F5E9D6 30%, #EDE0C8 100%);
+}
+
+.result-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 48rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 装饰云 */
+.cloud {
+  position: absolute;
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+  opacity: 0.08;
+}
+.cloud-1 {
+  top: 60rpx;
+  left: 40rpx;
+  background: #C82506;
+}
+.cloud-2 {
+  top: 100rpx;
+  right: 60rpx;
+  background: #1E6F9F;
+  width: 140rpx;
+  height: 70rpx;
+}
+
+/* 结果卡片 */
+.result-card {
+  margin-top: 100rpx;
+  width: 100%;
+  max-width: 580rpx;
+  background: #FFFAF3;
+  border-radius: 32rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.1);
+  border: 2rpx solid #D4A84B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60rpx 40rpx 50rpx;
+  box-sizing: border-box;
+}
+
+.result-emoji {
+  font-size: 88rpx;
+  line-height: 1;
+  margin-bottom: 20rpx;
+}
+
+.result-title {
+  font-size: 52rpx;
+  font-weight: bold;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  margin-bottom: 30rpx;
+}
+
+.divider {
+  width: 80%;
+  height: 2rpx;
+  background: linear-gradient(90deg, rgba(212,168,75,0) 0%, rgba(212,168,75,0.5) 50%, rgba(212,168,75,0) 100%);
+  margin-bottom: 28rpx;
+}
+
+.game-info {
+  font-size: 28rpx;
+  color: #B8A48C;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  margin-bottom: 32rpx;
+}
+
+.score-num {
+  font-size: 96rpx;
+  font-weight: bold;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  line-height: 1.1;
+  margin-bottom: 8rpx;
+}
+
+.score-label {
+  font-size: 28rpx;
+  color: #B8A48C;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.time-text {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #B8A48C;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: rgba(212, 168, 75, 0.08);
+  padding: 8rpx 24rpx;
+  border-radius: 20rpx;
+}
+
+/* 按钮区 */
+.btn-area {
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main-btn {
+  width: 400rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  background: linear-gradient(180deg, #D93A1B 0%, #C82506 50%, #8B1A04 100%);
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: bold;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  border-radius: 48rpx;
+  box-shadow: 0 6rpx 20rpx rgba(200, 37, 6, 0.35);
+  letter-spacing: 4rpx;
+}
+
+.main-btn:active {
+  opacity: 0.85;
+  transform: scale(0.97);
+}
+
+.home-link {
+  margin-top: 32rpx;
+  font-size: 28rpx;
+  color: #B8A48C;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  padding: 16rpx 40rpx;
+}
+
+.home-link:active {
+  color: #8B7A68;
+}
