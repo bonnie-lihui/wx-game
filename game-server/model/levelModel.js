@@ -77,8 +77,8 @@ async function getLevelData(gameId, difficulty, level, openid, themeId, resetPro
   let sql = `SELECT * FROM ${tableName} WHERE difficulty = ?`;
   const params = [difficulty];
   
-  // 只有 charDiff 游戏才支持 theme_id 字段
-  if (themeId && gameId === 'charDiff') {
+  // 只有 charDiff 游戏才支持 theme_id 字段，并且 themeId 必须是有效值（不能是字符串 'null' 或 'undefined'）
+  if (themeId && themeId !== 'null' && themeId !== 'undefined' && gameId === 'charDiff') {
     sql += ' AND (theme_id = ? OR theme_id IS NULL)';
     params.push(themeId);
   }
