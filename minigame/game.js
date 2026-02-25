@@ -7,7 +7,8 @@
 // ========== 全局配置（可在此调整） ==========
 const GLOBAL_CONFIG = {
   /** 后端接口基础域名 - 【自有域名替换位】替换为你的服务器域名，如 https://api.yourdomain.com */
-  API_BASE: 'http://localhost:3000',
+  API_BASE: 'https://vx-game.solaboom.cn',
+  // API_BASE: 'http://localhost:5565',
   /** 默认超时(ms) */
   REQUEST_TIMEOUT: 10000,
   /** 插屏广告展示间隔(分钟) */
@@ -16,6 +17,7 @@ const GLOBAL_CONFIG = {
 
 // 全局单例，供各页面使用
 let gameInstance = null;
+let isLoginInProgress = false; // 登录进行中标记
 
 /**
  * 游戏主类 - 负责初始化与全局状态
@@ -29,19 +31,85 @@ class Game {
   }
 
   /**
-   * 初始化：获取系统信息、初始化用户（若已登录）
+   * 初始化：获取系统信息、微信无感登录
    */
   init() {
+    // 如果已登录，直接返回
+    if (this.userInfo && this.userInfo.openid) {
+      console.log('[Game] 已登录，跳过');
+      return Promise.resolve({ 
+        systemInfo: this.systemInfo, 
+        userInfo: this.userInfo, 
+        unlockList: this.unlockList 
+      });
+    }
+
+    // 如果正在登录，拒绝重复请求
+    if (isLoginInProgress) {
+      console.log('[Game] 登录进行中，拒绝重复请求');
+      return Promise.reject(new Error('登录进行中'));
+    }
+
+    isLoginInProgress = true;
+
     return new Promise((resolve, reject) => {
       try {
         this.systemInfo = wx.getSystemInfoSync();
-        // 可在此调用 /api/user/init 拉取用户数据，此处仅做占位
-        resolve({ systemInfo: this.systemInfo });
+        
+        // 微信无感登录
+        wx.login({
+          success: (res) => {
+            if (res.code) {
+              // 调用后端接口
+              this._doWxLogin(res.code)
+                .then(result => {
+                  isLoginInProgress = false;
+                  resolve(result);
+                })
+                .catch(err => {
+                  isLoginInProgress = false;
+                  reject(err);
+                });
+            } else {
+              isLoginInProgress = false;
+              reject(new Error('获取登录凭证失败'));
+            }
+          },
+          fail: (err) => {
+            isLoginInProgress = false;
+            console.error('[Game] wx.login 失败', err);
+            reject(err);
+          }
+        });
       } catch (e) {
+        isLoginInProgress = false;
         console.error('[Game] init error:', e);
         reject(e);
       }
     });
+  }
+
+  /**
+   * 调用后端接口完成登录
+   * @private
+   */
+  _doWxLogin(code) {
+    const api = require('./utils/api.js');
+    return api.wxLogin(code)
+      .then((res) => {
+        if (res.success) {
+          this.userInfo = res.userInfo || {};
+          this.unlockList = res.unlockList || { games: [], themes: [], hidden: false };
+          console.log('[Game] 登录成功', this.userInfo);
+          return { 
+            systemInfo: this.systemInfo, 
+            userInfo: this.userInfo, 
+            unlockList: this.unlockList 
+          };
+        } else {
+          throw new Error(res.msg || '登录失败');
+        }
+      });
   }
 
   /** 获取画布适配后的设计宽高（默认 750 设计稿） */
@@ -54,22 +122,20 @@ class Game {
 }
 
 /**
- * 小游戏入口
+ * 获取游戏实例（懒加载，不自动登录）
  */
-function main() {
-  console.log('[Game] main() 执行');
-  gameInstance = new Game();
-  gameInstance.init().then(() => {
-    console.log('[Game] 国风轻玩合集2.0 初始化完成', { windowWidth: gameInstance.systemInfo && gameInstance.systemInfo.windowWidth, windowHeight: gameInstance.systemInfo && gameInstance.systemInfo.windowHeight });
-  }).catch(err => {
-    console.error('[Game] 初始化失败', err);
-  });
+function getGameInstance() {
+  if (!gameInstance) {
+    console.log('[Game] 创建游戏实例');
+    gameInstance = new Game();
+  }
+  return gameInstance;
 }
 
 // 导出供页面使用
 module.exports = {
-  getGame: () => gameInstance,
+  getGame: getGameInstance,
   GLOBAL_CONFIG,
 };
 
-main();
+console.log('[Game] game.js 加载完成（延迟登录）');

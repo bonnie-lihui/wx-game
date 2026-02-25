@@ -25,7 +25,7 @@ const TIME_LIMIT_CONFIG = {
     easy: 10,
     normal: 20,
     hard: 30,
-    hell: 30,
+    hell: 25,
   },
   poetryConnect: {
     easy: 10,
@@ -71,11 +71,18 @@ async function getLevelData(gameId, difficulty, level, openid, themeId, resetPro
     return null;
   }
 
-  console.log(`[levelModel] 📊 查询关卡：game=${gameId}, difficulty=${difficulty}, level=${level}, themeId=${themeId || 'null'}`);
+  // 特殊处理：charDiff 的 hell 难度读取 hard 难度数据
+  let queryDifficulty = difficulty;
+  if (gameId === 'charDiff' && difficulty === 'hell') {
+    queryDifficulty = 'hard';
+    console.log(`[levelModel] charDiff hell 难度，使用 hard 难度数据`);
+  }
+
+  console.log(`[levelModel] 📊 查询关卡：game=${gameId}, difficulty=${difficulty}, queryDifficulty=${queryDifficulty}, level=${level}, themeId=${themeId || 'null'}`);
 
   // 构建 SQL：从对应游戏的表中查询
   let sql = `SELECT * FROM ${tableName} WHERE difficulty = ?`;
-  const params = [difficulty];
+  const params = [queryDifficulty];
   
   // 只有 charDiff 游戏才支持 theme_id 字段，并且 themeId 必须是有效值（不能是字符串 'null' 或 'undefined'）
   if (themeId && themeId !== 'null' && themeId !== 'undefined' && gameId === 'charDiff') {

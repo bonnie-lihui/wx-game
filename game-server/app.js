@@ -4,6 +4,9 @@
  * @file server-node/app.js
  */
 
+// 优先加载 .env.local（仅本地存在，不提交），使 SESSION_KEY_ENCRYPTION_KEY 等本地生效
+require('dotenv').config({ path: require('path').resolve(__dirname, '.env.local') });
+
 const express = require('express');
 const config = require('./config');
 

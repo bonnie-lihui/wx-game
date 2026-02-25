@@ -11,6 +11,20 @@ console.log('[App] game.js 已加载');
 App({
   onLaunch(options) {
     console.log('[App] onLaunch 执行', options);
+    
+    // 延迟执行登录，确保环境准备好
+    setTimeout(() => {
+      const game = require('./game.js');
+      const instance = game.getGame();
+      
+      instance.init()
+        .then((result) => {
+          console.log('[App] 无感登录成功', result.userInfo);
+        })
+        .catch((err) => {
+          console.error('[App] 登录失败', err);
+        });
+    }, 100);
   },
 
   onShow() {

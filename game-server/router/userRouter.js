@@ -5,9 +5,11 @@
 
 const express = require('express');
 const userController = require('../controller/userController');
+const rateLimitWxLogin = require('../middleware/rateLimitWxLogin');
 
 const router = express.Router();
 
+router.post('/wxLogin', rateLimitWxLogin, userController.wxLogin);
 router.post('/init', userController.init);
 router.post('/saveProgress', userController.saveProgress);
 router.post('/unlockGame', userController.unlockGame);

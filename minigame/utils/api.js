@@ -100,6 +100,13 @@ function post(url, data = {}) {
 
 // ========== 业务接口封装 ==========
 
+/** 
+ * 微信无感登录
+ */
+function wxLogin(code, nickname, avatarUrl) {
+  return post('/api/user/wxLogin', { code, nickname, avatarUrl });
+}
+
 /** 初始化用户 */
 function userInit(openid, nickname) {
   return post('/api/user/init', { openid, nickname });
@@ -147,6 +154,7 @@ module.exports = {
   request,
   get,
   post,
+  wxLogin,
   userInit,
   saveProgress,
   unlockGame,

@@ -1,35 +1,53 @@
 /**
  * 用户表操作：进度、解锁状态 CRUD
- * 说明：移除了未使用的分享记录功能
+ * 说明：移除了未使用的分享记录功能；session_key 落库前经 AES-256-GCM 加密
  * @file server/model/userModel.js
  */
 
 const pool = require('./pool');
+const { encryptSessionKey } = require('../utils/sessionKeyCrypto');
 
 /**
  * 初始化/获取用户
  * @param {string} openid
  * @param {string} [nickname]
+ * @param {string} [sessionKey] - 微信 session_key
  * @returns {Promise<Object>}
  */
-async function findOrCreate(openid, nickname) {
+async function findOrCreate(openid, nickname, sessionKey) {
   const [rows] = await pool.query(
     'SELECT id, openid, nickname, avatar, unlock_game, unlock_theme, max_score, hidden_unlock FROM t_user WHERE openid = ?',
     [openid]
   );
   if (rows && rows.length > 0) {
     const u = rows[0];
+    const updates = [];
+    const params = [];
+    
     if (nickname && u.nickname !== nickname) {
-      await pool.query('UPDATE t_user SET nickname = ?, update_time = NOW() WHERE openid = ?', [nickname, openid]);
-      u.nickname = nickname;
+      updates.push('nickname = ?');
+      params.push(nickname);
     }
+    if (sessionKey) {
+      updates.push('session_key = ?');
+      params.push(encryptSessionKey(sessionKey));
+    }
+    
+    if (updates.length > 0) {
+      updates.push('update_time = NOW()');
+      params.push(openid);
+      await pool.query(`UPDATE t_user SET ${updates.join(', ')} WHERE openid = ?`, params);
+      if (nickname) u.nickname = nickname;
+    }
+    
     return normalizeUser(u);
   }
+  const storedSessionKey = sessionKey ? encryptSessionKey(sessionKey) : null;
   await pool.query(
-    'INSERT INTO t_user (openid, nickname, unlock_game, unlock_theme, max_score) VALUES (?, ?, ?, ?, ?)',
-    [openid, nickname || '', '[]', '[]', '{}']
+    'INSERT INTO t_user (openid, nickname, session_key, unlock_game, unlock_theme, max_score) VALUES (?, ?, ?, ?, ?, ?)',
+    [openid, nickname || '', storedSessionKey, '[]', '[]', '{}']
   );
-  return findOrCreate(openid, nickname);
+  return findOrCreate(openid, nickname, sessionKey);
 }
 
 function normalizeUser(row) {
@@ -116,10 +134,31 @@ async function unlockHidden(openid) {
   return { hidden: true };
 }
 
+/**
+ * 微信登录 - 保存用户信息和 session_key
+ * @param {string} openid
+ * @param {string} sessionKey
+ * @param {string} [nickname]
+ * @param {string} [avatar]
+ * @returns {Promise<Object>}
+ */
+async function wxLogin(openid, sessionKey, nickname, avatar) {
+  const user = await findOrCreate(openid, nickname, sessionKey);
+  
+  // 如果传入了头像，也更新头像
+  if (avatar && user.avatar !== avatar) {
+    await pool.query('UPDATE t_user SET avatar = ?, update_time = NOW() WHERE openid = ?', [avatar, openid]);
+    user.avatar = avatar;
+  }
+  
+  return user;
+}
+
 module.exports = {
   findOrCreate,
   saveProgress,
   unlockGame,
   unlockHidden,
+  wxLogin,
 };
 

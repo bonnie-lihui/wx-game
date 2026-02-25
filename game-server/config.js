@@ -10,7 +10,7 @@ module.exports = {
 
   /** MySQL 配置 - 替换为你的数据库地址/账号/密码 */
   db: {
-    host: process.env.DB_HOST || 'localhost',
+    host: process.env.DB_HOST || '127.0.0.1', // 使用 127.0.0.1 而不是 localhost，避免 IPv6 问题
     port: process.env.DB_PORT || 3306,
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || 'your_password',
@@ -28,6 +28,12 @@ module.exports = {
   hunyuan: {
     secretId: process.env.HUNYUAN_SECRET_ID || 'your_secret_id',
     secretKey: process.env.HUNYUAN_SECRET_KEY || 'your_secret_key',
+  },
+
+  /** 微信小程序配置 - 用于无感登录 */
+  wechat: {
+    appId: process.env.WX_APPID || 'wx03502f6933e2d06e',
+    appSecret: process.env.WX_APP_SECRET || '64c9da5645bf7f5eb3bedb87a4bce629',
   },
 
   /** 你的服务器域名（用于 CORS 等） */
