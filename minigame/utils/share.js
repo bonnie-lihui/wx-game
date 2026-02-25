@@ -7,11 +7,11 @@
 const api = require('./api.js');
 const { drawPosterToCanvas } = require('./canvas.js');
 
-/** 分享文案库（可扩展） */
+/** 分享文案库（可扩展）- 合规：无诱导分享、无“分享即解锁”等利诱表述 */
 const SHARE_TEXTS = [
-  '墨韵轻玩解锁春节包，邀君共玩！',
+  '墨韵轻玩，国风益智小游戏。',
   '一笔一画寻成语，国风轻玩等你来。',
-  '诗词连线，古风雅趣，分享即解锁。',
+  '诗词连线，古风雅趣，一起来玩。',
 ];
 
 /**
@@ -81,10 +81,40 @@ function setShareAppMessage(options = {}) {
   };
 }
 
+/** 分享链接统一进入首页的 path */
+const SHARE_PATH_INDEX = '/pages/index/index';
+
+/**
+ * 获取「分享给好友/群」配置：标题 + 固定进入首页
+ * 用于各页面 onShareAppMessage  return 值
+ */
+function getShareAppMessageConfig() {
+  return {
+    title: getShareText(),
+    path: SHARE_PATH_INDEX,
+    imageUrl: '',
+  };
+}
+
+/**
+ * 获取「分享到朋友圈」配置：标题 + 无 query，由 app 从分享场景进入时统一跳首页
+ * 用于各页面 onShareTimeline return 值
+ */
+function getShareTimelineConfig() {
+  return {
+    title: getShareText(),
+    query: '',
+    imageUrl: '',
+  };
+}
+
 module.exports = {
   getShareText,
   generatePoster,
   onShareSuccess,
   setShareAppMessage,
+  getShareAppMessageConfig,
+  getShareTimelineConfig,
+  SHARE_PATH_INDEX,
   SHARE_TEXTS,
 };

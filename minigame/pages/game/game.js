@@ -12,6 +12,7 @@ var drawDivider = canvasUtils.drawDivider;
 var THEME = canvasUtils.THEME;
 var roundRect = canvasUtils.roundRect;
 var api = require('../../utils/api.js');
+var share = require('../../utils/share.js');
 var WordFindLogic = require('../../gameLogic/wordFind.js').WordFindLogic;
 var CharDiffLogic = require('../../gameLogic/charDiff.js').CharDiffLogic;
 var PoetryConnectLogic = require('../../gameLogic/poetryConnect.js').PoetryConnectLogic;
@@ -46,6 +47,14 @@ Page({
   difficulty: 'easy',
   customTimeLimit: null,  // ✅ 后端返回的自定义时间（诗词连线使用）
   gameState: 'ready',  // 游戏状态：'ready'(准备) | 'playing'(进行中) | 'finished'(结束)
+
+  onShareAppMessage() {
+    return share.getShareAppMessageConfig();
+  },
+
+  onShareTimeline() {
+    return share.getShareTimelineConfig();
+  },
 
   onLoad(options) {
     console.log('[Game] onLoad', options);

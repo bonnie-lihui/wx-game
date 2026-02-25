@@ -9,6 +9,7 @@ const {
   drawCloud, drawDivider, drawDecorativeFlowers, THEME,
 } = require('../../utils/canvas.js');
 const ad = require('../../utils/ad.js');
+const share = require('../../utils/share.js');
 
 const GAMES = [
   { id: 'wordFind',        name: '找成语',     icon: '📜', desc: '字阵寻宝', colors: ['#FFF5F0', '#FFE8DC'] },
@@ -38,6 +39,14 @@ Page({
 
   onLoad() {
     console.log('[Index] onLoad');
+  },
+
+  onShareAppMessage() {
+    return share.getShareAppMessageConfig();
+  },
+
+  onShareTimeline() {
+    return share.getShareTimelineConfig();
   },
 
   onReady() {

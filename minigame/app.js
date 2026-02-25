@@ -8,15 +8,25 @@ console.log('[App] app.js 开始执行');
 require('./game.js');
 console.log('[App] game.js 已加载');
 
+/** 从群聊/朋友圈打开的场景码，通过分享链接进入时统一到首页 */
+const SHARE_SCENES = [1007, 1008]; // 1007 群聊会话打开, 1008 朋友圈打开
+
 App({
   onLaunch(options) {
     console.log('[App] onLaunch 执行', options);
-    
+
+    // 通过分享链接进入（群聊/朋友圈）时，统一跳转首页
+    if (options && options.scene !== undefined && SHARE_SCENES.indexOf(options.scene) !== -1) {
+      setTimeout(function () {
+        wx.reLaunch({ url: '/pages/index/index' });
+      }, 0);
+    }
+
     // 延迟执行登录，确保环境准备好
     setTimeout(() => {
       const game = require('./game.js');
       const instance = game.getGame();
-      
+
       instance.init()
         .then((result) => {
           console.log('[App] 无感登录成功', result.userInfo);

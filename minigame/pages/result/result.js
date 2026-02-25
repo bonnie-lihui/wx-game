@@ -15,6 +15,8 @@ var GAME_ICONS = {
   poetryConnect: '🖌️',
 };
 
+var share = require('../../utils/share.js');
+
 Page({
   data: {
     gameId: '',
@@ -28,6 +30,14 @@ Page({
     resultEmoji: '💪',
     resultText: '再接再厉',
     timeText: '',
+  },
+
+  onShareAppMessage: function() {
+    return share.getShareAppMessageConfig();
+  },
+
+  onShareTimeline: function() {
+    return share.getShareTimelineConfig();
   },
 
   onLoad: function(options) {

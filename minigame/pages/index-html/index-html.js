@@ -5,6 +5,7 @@
  */
 
 const { getGame } = require('../../game.js');
+const share = require('../../utils/share.js');
 
 const GAMES = [
   { id: 'wordFind',        name: '找成语',     icon: '📜', colors: ['#FFF5F0', '#FFE8DC'], levels: '⭐⭐⭐', unlocked: false },
@@ -20,6 +21,14 @@ Page({
   onLoad() {
     console.log('[Index-HTML] onLoad');
     this.loadUnlockStatus();
+  },
+
+  onShareAppMessage() {
+    return share.getShareAppMessageConfig();
+  },
+
+  onShareTimeline() {
+    return share.getShareTimelineConfig();
   },
 
   onShow() {

@@ -12,9 +12,6 @@
     "backgroundColor": "#F5E9D6"
   },
   "permission": {
-    "scope.userInfo": {
-      "desc": "用于展示昵称与头像"
-    },
     "scope.writePhotosAlbum": {
       "desc": "用于保存分享海报到相册（可选）"
     }
