@@ -13,6 +13,7 @@ var THEME = canvasUtils.THEME;
 var roundRect = canvasUtils.roundRect;
 var api = require('../../utils/api.js');
 var share = require('../../utils/share.js');
+var ad = require('../../utils/ad.js');
 var WordFindLogic = require('../../gameLogic/wordFind.js').WordFindLogic;
 var CharDiffLogic = require('../../gameLogic/charDiff.js').CharDiffLogic;
 var PoetryConnectLogic = require('../../gameLogic/poetryConnect.js').PoetryConnectLogic;
@@ -40,7 +41,8 @@ Page({
   answer: '',
   canvasReady: false,
   dataReady: false,
-  hintUsed: false,
+  hintCount: 1,       // 每局 1 次免费提示，用完后可看广告获得（每轮最多 3 次）
+  hintIndexUsed: 0,   // 本轮已使用的提示档位，避免重复同一句提示
   timer: null,
   timerRemaining: 0,
   timerTotal: 0,
@@ -64,7 +66,8 @@ Page({
     this.resetProgress = options.reset === '1';
     // 检查是否需要自动开始（从结果页点击"下一关"进入）
     this.autoStart = options.autoStart === '1';
-    
+    // 激励视频改为首次点击「看广告」时再创建，避免打开页面就创建导致 updateImageView/insertTextView 报错
+    this._rewardedVideoAd = null;
     if (this.resetProgress) {
       console.log('[Game] ⚠️  将重置游戏进度，从第一关开始');
     }
@@ -231,6 +234,8 @@ Page({
 
   /** 启动倒计时 */
   startTimer() {
+    this.hintCount = 1;
+    this.hintIndexUsed = 0;
     if (this.timer) { this.timer.stop(); }
     // ✅ 优先使用后端返回的时间，否则使用前端默认配置
     var totalSec = this.customTimeLimit || getTimeLimit(this.gameId, this.difficulty);
@@ -452,62 +457,170 @@ Page({
     var hintOnlyX = (w - hintOnlyW) / 2;
     ctx.save();
     roundRect(ctx, hintOnlyX, btnY, hintOnlyW, btnH, btnH / 2);
-    ctx.fillStyle = this.hintUsed ? '#EEE' : 'rgba(212, 168, 75, 0.12)';
+    var hasHint = this.hintCount > 0;
+    ctx.fillStyle = hasHint ? 'rgba(212, 168, 75, 0.12)' : 'rgba(212, 168, 75, 0.08)';
     ctx.fill();
-    ctx.strokeStyle = this.hintUsed ? '#CCC' : (THEME.danJin || '#D4A84B');
+    ctx.strokeStyle = hasHint ? (THEME.danJin || '#D4A84B') : '#B8A48C';
     ctx.lineWidth = 1.5;
     ctx.stroke();
     ctx.font = '15px "PingFang SC", "Microsoft YaHei", sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillStyle = this.hintUsed ? '#AAA' : (THEME.danJin || '#D4A84B');
-    ctx.fillText('💡 提示', hintOnlyX + hintOnlyW / 2, btnY + btnH / 2);
+    ctx.fillStyle = hasHint ? (THEME.danJin || '#D4A84B') : '#999';
+    ctx.fillText(this.hintCount > 0 ? '💡 提示' : '💡 看广告得提示', hintOnlyX + hintOnlyW / 2, btnY + btnH / 2);
     ctx.restore();
+    // 与 draw 完全一致的按钮区域，供 handleTap 精确命中
+    this._hintBtnBounds = { x: hintOnlyX, y: btnY, w: hintOnlyW, h: btnH };
   },
 
-  /** 显示提示 */
+  /** 显示提示（有次数直接给；无次数时看广告得 1 次，每回合都可看，观看时暂停倒计时） */
   showHint() {
-    if (this.hintUsed) {
-      wx.showToast({ title: '已使用过提示', icon: 'none' });
+    var self = this;
+    if (this.hintCount > 0) {
+      this.hintCount--;
+      this.provideHint();
       return;
     }
-    
-    // 直接给提示，不弹窗
-    this.hintUsed = true;
-    this.provideHint();
+    // 开发者工具中激励视频会触发 updateImageView/insertTextView 等报错且无法正常播放，跳过真实广告
+    try {
+      var sysInfo = wx.getSystemInfoSync();
+      if (sysInfo && (sysInfo.platform === 'devtools' || (sysInfo.host && sysInfo.host.env === 'develop'))) {
+        this.hintCount = Math.min(3, this.hintCount + 1);
+        wx.showToast({ title: '模拟环境已增加 1 次提示', icon: 'none' });
+        this.draw();
+        return;
+      }
+    } catch (e) {}
+    if (!this._rewardedVideoAd) {
+      this._rewardedVideoAd = ad.createRewardedVideoAdForPage();
+    }
+    if (!this._rewardedVideoAd) {
+      wx.showToast({ title: '广告未就绪，请稍后再试', icon: 'none' });
+      return;
+    }
+    // 记录当前关卡，避免广告回调在下一关才触发时误弹提示、误操作
+    var adLevel = this.level;
+    var adGameId = this.gameId;
+    var needPause = this.gameState === 'playing' && this.timer;
+    if (needPause) {
+      this.timer.pause();
+      this.draw();
+    }
+    ad.showRewardedVideoForRewardWithInstance(self._rewardedVideoAd)
+      .then(function(watched) {
+        var stillSameRound = self.level === adLevel && self.gameId === adGameId;
+        if (needPause && stillSameRound && self.timer) self.timer.resume();
+        if (stillSameRound) self.draw();
+        if (!stillSameRound) return;
+        if (watched) {
+          self.hintCount = Math.min(3, self.hintCount + 1);
+          wx.showToast({ title: '获得 1 次提示机会', icon: 'none' });
+        } else {
+          wx.showToast({ title: '广告未完整观看或加载失败，请稍后再试', icon: 'none', duration: 2500 });
+        }
+      })
+      .catch(function() {
+        var stillSameRound = self.level === adLevel && self.gameId === adGameId;
+        if (needPause && stillSameRound && self.timer) self.timer.resume();
+        if (stillSameRound) {
+          self.draw();
+          wx.showToast({ title: '广告加载失败，请稍后再试', icon: 'none', duration: 2500 });
+        }
+      });
   },
 
-  /** 根据玩法提供提示 */
+  /**
+   * 诗词连线：按档位直接揭示一对正确搭配（未连线的优先），避免空泛提示
+   */
+  _getPoetryConnectHint(levelIndex) {
+    var logic = this.logic;
+    if (!logic || !logic.pairs || !logic.items || !logic.connections) {
+      return '先选左侧一句，再选右侧对应的下句完成连线。';
+    }
+    var connectedIds = {};
+    for (var c = 0; c < logic.connections.length; c++) {
+      connectedIds[logic.connections[c].fromId] = true;
+      connectedIds[logic.connections[c].toId] = true;
+    }
+    var unconnectedPairs = [];
+    for (var p = 0; p < logic.pairs.length; p++) {
+      var a = logic.pairs[p][0];
+      var b = logic.pairs[p][1];
+      if (!connectedIds[a] && !connectedIds[b]) unconnectedPairs.push([a, b]);
+    }
+    function getItemById(id) {
+      for (var i = 0; i < logic.items.length; i++) {
+        if (logic.items[i].id === id) return logic.items[i];
+      }
+      return null;
+    }
+    function getPairText(ids) {
+      var itemA = getItemById(ids[0]);
+      var itemB = getItemById(ids[1]);
+      if (!itemA || !itemB) return '';
+      var upper = itemA.type === 'upper' ? itemA : itemB;
+      var lower = itemA.type === 'upper' ? itemB : itemA;
+      return '「' + upper.text + '」对应「' + lower.text + '」';
+    }
+    if (unconnectedPairs.length === 0) {
+      return '已全部连线完成！';
+    }
+    var pick = unconnectedPairs[levelIndex % unconnectedPairs.length];
+    return getPairText(pick);
+  },
+
+  /**
+   * 根据玩法提供提示，按档位递增、不重复（已提示过的不会再看广告后再出现）
+   * 每轮最多 3 次提示（所有游戏统一）
+   */
   provideHint() {
-    let hintText = '';
-    
+    var idx = this.hintIndexUsed;
+    var hintText = '';
+    var maxLevel = 0;
+
     switch (this.gameId) {
       case 'wordFind':
-        if (this.answer && this.answer.length > 0) {
-          hintText = `成语的第一个字是"${this.answer[0]}"`;
+        maxLevel = 3;
+        if (this.answer && this.answer.length >= 4) {
+          if (idx === 0) hintText = '成语的第一个字是"' + this.answer[0] + '"';
+          else if (idx === 1) hintText = '前两个字是"' + this.answer[0] + this.answer[1] + '"';
+          else if (idx === 2) hintText = '最后一个字是"' + this.answer[3] + '"';
+        } else if (this.answer && this.answer.length > 0) {
+          hintText = idx === 0 ? '成语的第一个字是"' + this.answer[0] + '"' : '再想想，共四个字';
         }
         break;
       case 'charDiff':
+        maxLevel = 3;
         if (this.logic && this.logic.diffAt) {
-          const row = this.logic.diffAt.row + 1;
-          const col = this.logic.diffAt.col + 1;
-          hintText = `不同的字在第 ${row} 行附近`;
+          var row = this.logic.diffAt.row + 1;
+          var col = this.logic.diffAt.col + 1;
+          if (idx === 0) hintText = '不同的字在第 ' + row + ' 行附近';
+          else if (idx === 1) hintText = '在第 ' + col + ' 列附近';
+          else hintText = '在第 ' + row + ' 行第 ' + col + ' 列';
         }
         break;
       case 'poetryConnect':
-        hintText = '试试从第一句开始连线';
+        maxLevel = 3;
+        hintText = this._getPoetryConnectHint(idx);
         break;
-      // numberEliminate 已移除
       default:
+        maxLevel = 1;
         hintText = '仔细观察，你一定能找到答案！';
     }
-    
+
+    if (idx >= maxLevel || !hintText) {
+      hintText = '本关暂无更多提示，加油！';
+      this.hintCount++; // 未给出新提示，不消耗此次机会
+    } else {
+      this.hintIndexUsed++;
+    }
+
     wx.showModal({
       title: '💡 提示',
       content: hintText,
       showCancel: false
     });
-    
+
     this.draw();
   },
 
@@ -545,23 +658,22 @@ Page({
     var offsetX = (w - nativeW * sc) / 2;
     var offsetY = areaTop + extraTop * sc;
 
-    // ====== 1. 先检测底部按钮（用屏幕坐标） ======
-    var btnH2 = 44;
-    var contentBottom = offsetY + nativeH * sc + 16;
-    var btnMinY2 = contentBottom + 8;
-    var btnMaxY2 = h - btnH2 - 16;
-    var btnY2 = Math.min(btnMinY2, btnMaxY2);
-
-    // 所有游戏统一：只有提示按钮（居中）
-    var hintOnlyW = 140;
-    var hintOnlyX = (w - hintOnlyW) / 2;
-    
-    console.log('[Game] 提示按钮区域:', {
-      hintBtn: { x: hintOnlyX, y: btnY2, w: hintOnlyW, h: btnH2 },
-      tapPoint: { x, y }
-    });
-    
-    if (y >= btnY2 && y <= btnY2 + btnH2 && x >= hintOnlyX && x <= hintOnlyX + hintOnlyW) {
+    // ====== 1. 先检测底部按钮（优先用 draw 时保存的边界，与绘制完全一致） ======
+    var hintHit = false;
+    if (this._hintBtnBounds) {
+      var b = this._hintBtnBounds;
+      if (y >= b.y && y <= b.y + b.h && x >= b.x && x <= b.x + b.w) hintHit = true;
+    } else {
+      var btnH2 = 44;
+      var contentBottom = offsetY + nativeH * sc + 16;
+      var btnMinY2 = contentBottom + 8;
+      var btnMaxY2 = h - btnH2 - 16;
+      var btnY2 = Math.min(btnMinY2, btnMaxY2);
+      var hintOnlyW = 140;
+      var hintOnlyX = (w - hintOnlyW) / 2;
+      if (y >= btnY2 && y <= btnY2 + btnH2 && x >= hintOnlyX && x <= hintOnlyX + hintOnlyW) hintHit = true;
+    }
+    if (hintHit) {
       console.log('[Game] 点击了提示按钮');
       this.showHint();
       return;

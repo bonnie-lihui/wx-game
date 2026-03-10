@@ -10,5 +10,6 @@ const router = express.Router();
 
 router.get('/getLevelData', levelController.getLevelData);
 router.get('/getThemeData', levelController.getThemeData);
+router.get('/getRandomCharDiff', levelController.getRandomCharDiff);
 
 module.exports = router;

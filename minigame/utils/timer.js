@@ -25,14 +25,7 @@ function GameTimer(totalSeconds, onFrame, onTimeout) {
   this._intervalId = null;  // 兜底 setInterval id
 }
 
-GameTimer.prototype.start = function() {
-  if (this._running) return;
-  this._running = true;
-  this._startMs = Date.now();
-  var self = this;
-
-  // 尝试用 canvas 的 requestAnimationFrame（小程序环境）
-  // 如果没有，则用 setInterval 16ms 模拟
+function tickLoop(self) {
   function tick() {
     if (!self._running) return;
     var elapsed = (Date.now() - self._startMs) / 1000;
@@ -44,20 +37,35 @@ GameTimer.prototype.start = function() {
       self.onTimeout();
       return;
     }
-    // 继续下一帧
     if (typeof requestAnimationFrame === 'function') {
       self._rafId = requestAnimationFrame(tick);
     }
   }
-
   if (typeof requestAnimationFrame === 'function') {
-    this._rafId = requestAnimationFrame(tick);
+    self._rafId = requestAnimationFrame(tick);
   } else {
-    // 兜底：16ms 间隔 ≈ 60fps
-    this._intervalId = setInterval(function() {
-      tick();
-    }, 16);
+    self._intervalId = setInterval(tick, 16);
   }
+}
+
+GameTimer.prototype.start = function() {
+  if (this._running) return;
+  this._running = true;
+  this._startMs = Date.now();
+  tickLoop(this);
+};
+
+/** 暂停倒计时（如观看广告时），保留当前剩余时间 */
+GameTimer.prototype.pause = function() {
+  this.stop();
+};
+
+/** 恢复倒计时（广告结束后），从当前剩余时间继续 */
+GameTimer.prototype.resume = function() {
+  if (this._running) return;
+  this._running = true;
+  this._startMs = Date.now() - (this.total - this.remaining) * 1000;
+  tickLoop(this);
 };
 
 GameTimer.prototype.stop = function() {

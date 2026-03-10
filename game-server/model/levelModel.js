@@ -81,16 +81,16 @@ async function getLevelData(gameId, difficulty, level, openid, themeId, resetPro
   console.log(`[levelModel] 📊 查询关卡：game=${gameId}, difficulty=${difficulty}, queryDifficulty=${queryDifficulty}, level=${level}, themeId=${themeId || 'null'}`);
 
   // 构建 SQL：从对应游戏的表中查询
-  let sql = `SELECT * FROM ${tableName} WHERE difficulty = ?`;
-  const params = [queryDifficulty];
-  
-  // 只有 charDiff 游戏才支持 theme_id 字段，并且 themeId 必须是有效值（不能是字符串 'null' 或 'undefined'）
-  if (themeId && themeId !== 'null' && themeId !== 'undefined' && gameId === 'charDiff') {
-    sql += ' AND (theme_id = ? OR theme_id IS NULL)';
-    params.push(themeId);
+  // charDiff 表没有 difficulty 列，难度由前端游戏逻辑（矩阵大小、时间）控制
+  let sql = `SELECT * FROM ${tableName}`;
+  const params = [];
+
+  if (gameId !== 'charDiff') {
+    sql += ' WHERE difficulty = ?';
+    params.push(queryDifficulty);
   }
   
-  sql += ' ORDER BY RAND() LIMIT 1';  // 随机选择一条
+  sql += ' ORDER BY RAND() LIMIT 1';
   
   try {
     const [rows] = await pool.query(sql, params);
@@ -174,6 +174,30 @@ function parseLevelRow(row, gameId, difficulty) {
   };
 }
 
+/**
+ * 从 t_level_char_diff 表中随机获取一条汉字找不同数据（不区分难度）
+ * @returns {Promise<{id: number, sameChar: string, diffChar: string} | null>}
+ */
+async function getRandomCharDiff() {
+  const sql = 'SELECT id, same_char, diff_char FROM t_level_char_diff ORDER BY RAND() LIMIT 1';
+  try {
+    const [rows] = await pool.query(sql);
+    if (!rows || rows.length === 0) {
+      return null;
+    }
+    const row = rows[0];
+    return {
+      id: row.id,
+      sameChar: row.same_char,
+      diffChar: row.diff_char,
+    };
+  } catch (e) {
+    console.error('[levelModel] getRandomCharDiff 查询失败:', e.message);
+    throw e;
+  }
+}
+
 module.exports = {
   getLevelData,
+  getRandomCharDiff,
 };

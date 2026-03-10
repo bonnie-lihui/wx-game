@@ -5,14 +5,14 @@
  * @file utils/ad.js
  */
 
-// ========== 广告位 ID（替换为你的） ==========
+// ========== 广告位 ID（微信公众平台 - 流量主） ==========
 const AD_IDS = {
   /** 激励视频 - 用于提示/复活/解锁 */
-  REWARD_VIDEO: 'your_reward_video_ad_unit_id',
+  REWARD_VIDEO: 'adunit-7b673782da969c7a',
   /** 插屏 - 结算后展示，5秒可跳过 */
-  INTERSTITIAL: 'your_interstitial_ad_unit_id',
+  INTERSTITIAL: 'adunit-7b673782da969c7a',
   /** Banner - 首页/玩法页底部 */
-  BANNER: 'your_banner_ad_unit_id',
+  BANNER: 'adunit-7b673782da969c7a',
 };
 
 /** 插屏展示间隔(ms) */
@@ -20,7 +20,58 @@ const INTERSTITIAL_INTERVAL = 15 * 60 * 1000;
 let lastInterstitialTime = 0;
 
 /**
- * 创建激励视频广告
+ * 在当前页面创建激励视频实例（必须在本页创建、本页 show，否则会报错）
+ * 只绑定一次 onClose，避免「绑定多次 onClose」警告与重复回调
+ * @returns {WechatMinigame.RewardedVideoAd|null}
+ */
+function createRewardedVideoAdForPage() {
+  if (!wx.createRewardedVideoAd) return null;
+  try {
+    const ad = wx.createRewardedVideoAd({ adUnitId: AD_IDS.REWARD_VIDEO });
+    ad._currentResolve = null;
+    ad.onLoad(() => {
+      console.log('[Ad] 激励视频加载成功');
+    });
+    ad.onError((err) => {
+      console.warn('[Ad] 激励视频错误', err);
+    });
+    ad.onClose((res) => {
+      if (ad._currentResolve) {
+        ad._currentResolve(!!(res && res.isEnded));
+        ad._currentResolve = null;
+      }
+      ad.load().catch(() => {});
+    });
+    return ad;
+  } catch (e) {
+    console.error('[Ad] 创建激励视频失败', e);
+    return null;
+  }
+}
+
+/**
+ * 使用当前页创建的激励视频实例播放（解决「只能在创建广告的页面 show」报错）
+ * @param {WechatMinigame.RewardedVideoAd|null} ad 本页 onLoad 时 createRewardedVideoAdForPage() 的返回值
+ * @returns {Promise<boolean>} 是否完整观看至结束
+ */
+function showRewardedVideoForRewardWithInstance(ad) {
+  if (!ad) return Promise.resolve(false);
+  return new Promise((resolve) => {
+    ad._currentResolve = resolve;
+    ad.load()
+      .then(() => ad.show())
+      .catch((err) => {
+        console.warn('[Ad] 激励视频加载/展示失败', err);
+        if (ad._currentResolve) {
+          ad._currentResolve(false);
+          ad._currentResolve = null;
+        }
+      });
+  });
+}
+
+/**
+ * 创建激励视频广告（每次新建，兼容旧用法）
  * @returns {WechatMinigame.RewardedVideoAd|null}
  */
 function createRewardedVideoAd() {
@@ -44,7 +95,15 @@ function createRewardedVideoAd() {
 }
 
 /**
- * 播放激励视频，观看完成后 resolve(true)
+ * 播放激励视频（需传入本页创建的实例，见 createRewardedVideoAdForPage）
+ * @deprecated 请使用 createRewardedVideoAdForPage + showRewardedVideoForRewardWithInstance
+ */
+function showRewardedVideoForReward() {
+  return Promise.resolve(false);
+}
+
+/**
+ * 播放激励视频，观看完成后 resolve(true)（兼容旧用法，每次新建实例）
  * @returns {Promise<boolean>} 是否观看完成
  */
 function showRewardedVideo() {
@@ -135,6 +194,9 @@ function createBannerAd(style = {}) {
 module.exports = {
   AD_IDS,
   showRewardedVideo,
+  showRewardedVideoForReward,
+  createRewardedVideoAdForPage,
+  showRewardedVideoForRewardWithInstance,
   showInterstitial,
   createBannerAd,
   createRewardedVideoAd,

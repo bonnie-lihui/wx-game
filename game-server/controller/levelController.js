@@ -61,7 +61,25 @@ async function getThemeData(req, res) {
   }
 }
 
+/**
+ * GET /api/level/getRandomCharDiff
+ * 随机获取一条汉字找不同数据（不区分难度，339 条中随机返回一条）
+ */
+async function getRandomCharDiff(req, res) {
+  try {
+    const data = await levelModel.getRandomCharDiff();
+    if (!data) {
+      return res.json({ code: 404, msg: '暂无题库数据' });
+    }
+    res.json({ code: 0, data });
+  } catch (e) {
+    console.error('[levelController.getRandomCharDiff]', e);
+    res.status(500).json({ code: 500, msg: e.message || '服务器错误' });
+  }
+}
+
 module.exports = {
   getLevelData,
   getThemeData,
+  getRandomCharDiff,
 };
