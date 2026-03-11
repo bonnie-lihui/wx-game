@@ -13,7 +13,7 @@ var DIFFICULTY_CONFIG = {
   easy:   { cols: 3, rows: 3, cellSize: 80 },
   normal: { cols: 4, rows: 4, cellSize: 68 },
   hard:   { cols: 5, rows: 5, cellSize: 58 },
-  hell:   { cols: 5, rows: 8, cellSize: 50 },
+  hell:   { cols: 6, rows: 8, cellSize: 48 },
 }
 
 function CharDiffLogic(options) {

@@ -9,6 +9,8 @@ var auth = require('../utils/auth')
 var WordFindLogic = require('../gameLogic/wordFind').WordFindLogic
 var CharDiffLogic = require('../gameLogic/charDiff').CharDiffLogic
 var PoetryConnectLogic = require('../gameLogic/poetryConnect').PoetryConnectLogic
+var animation = require('../engine/animation')
+var sound = require('../utils/sound')
 
 var THEME = constants.THEME
 var GAME_NAMES = constants.GAME_NAMES
@@ -26,7 +28,7 @@ var _level = 1
 var _logic = null
 var _dataReady = false
 var _gameState = 'ready'
-var _hintCount = 1
+var _hintCount = 3
 var _hintIndexUsed = 0
 var _levelData = null
 var _answer = ''
@@ -48,11 +50,14 @@ var _backBtnBounds = null
 var _capsuleTop = 0
 var _capsuleBottom = 0
 
+var _passParticles = null
+var _passStartTime = 0
+var _passScore = 0
+
 function _resetState() {
   _logic = null
   _dataReady = false
   _gameState = 'ready'
-  _hintCount = 1
   _hintIndexUsed = 0
   _levelData = null
   _answer = ''
@@ -69,10 +74,12 @@ function _resetState() {
   _hintBtnBounds = null
   _startBtnBounds = null
   _backBtnBounds = null
+  _passParticles = null
+  _passStartTime = 0
+  _passScore = 0
 }
 
 function _startTimer() {
-  _hintCount = 1
   _hintIndexUsed = 0
   var totalSec = _customTimeLimit || getTimeLimit(_gameId, _difficulty)
   _timerTotal = totalSec
@@ -266,14 +273,16 @@ function _drawReadyScreen(ctx, w, h, titleBarH) {
 }
 
 function _goResult(success) {
-  _gameState = 'finished'
   _timerRunning = false
+  _gameState = 'finished'
   var remaining = _timerRemaining || 0
   var total = _timerTotal || 0
   var score = 0
   if (success && _logic && typeof _logic.calcFinalScore === 'function') {
     score = _logic.calcFinalScore(remaining, total)
   }
+  if (success) sound.correct()
+
   _mgr.switchTo('result', {
     gameId: _gameId,
     level: _level,
@@ -297,8 +306,43 @@ function _provideHint() {
     if (idx === 0) hintText = '不同的字在第 ' + row + ' 行附近'
     else if (idx === 1) hintText = '在第 ' + col + ' 列附近'
     else hintText = '在第 ' + row + ' 行第 ' + col + ' 列'
-  } else if (_gameId === 'poetryConnect') {
-    hintText = '仔细回忆诗词的上下句对应关系'
+  } else if (_gameId === 'poetryConnect' && _logic && _logic.pairs) {
+    var _nums = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十']
+    var _lg = _logic
+    var _uppers = [], _lowers = []
+    for (var _i = 0; _i < _lg.items.length; _i++) {
+      if (_lg.items[_i].type === 'upper') _uppers.push(_lg.items[_i])
+      else _lowers.push(_lg.items[_i])
+    }
+    _uppers.sort(function (a, b) { return a.y - b.y })
+    _lowers.sort(function (a, b) { return a.y - b.y })
+
+    var _unconn = []
+    for (var _pi = 0; _pi < _lg.pairs.length; _pi++) {
+      var _pair = _lg.pairs[_pi]
+      var _done = false
+      for (var _ci = 0; _ci < _lg.connections.length; _ci++) {
+        var _cn = _lg.connections[_ci]
+        if ((_cn.fromId === _pair[0] && _cn.toId === _pair[1]) ||
+            (_cn.fromId === _pair[1] && _cn.toId === _pair[0])) {
+          _done = true; break
+        }
+      }
+      if (!_done) _unconn.push(_pair)
+    }
+
+    var _hIdx = idx % _unconn.length
+    if (_unconn.length > 0 && _unconn[_hIdx]) {
+      var _uid = _unconn[_hIdx][0], _lid = _unconn[_hIdx][1]
+      var _upperText = '', _lowerText = ''
+      for (var _u = 0; _u < _uppers.length; _u++) {
+        if (_uppers[_u].id === _uid) { _upperText = _uppers[_u].text; break }
+      }
+      for (var _l = 0; _l < _lowers.length; _l++) {
+        if (_lowers[_l].id === _lid) { _lowerText = _lowers[_l].text; break }
+      }
+      hintText = '「' + _upperText + '」\n↕\n「' + _lowerText + '」'
+    }
   }
 
   if (!hintText) {
@@ -358,6 +402,7 @@ function _handleGameTap(x, y, w, h) {
       if (ret && ret.isFull) {
         if (ret.isCorrect) { _goResult(true) }
         else {
+          sound.wrong()
           _mgr.showToast('答案不对，再试试', 1500)
           setTimeout(function () { lg.selected = []; _mgr.requestDraw() }, 1500)
         }
@@ -370,6 +415,7 @@ function _handleGameTap(x, y, w, h) {
       _mgr.requestDraw()
       if (ret2.hit) { _goResult(true) }
       else {
+        sound.wrong()
         var tip = ret2.isRepeated ? '这个字已经试过了哦～'
           : ret2.wrongCount <= 2 ? '不对哦～再仔细看看'
           : '可以试试提示按钮哦'
@@ -395,6 +441,7 @@ var GameScene = {
     _gameId = params.gameId || 'wordFind'
     _level = parseInt(params.level, 10) || 1
     _autoStart = !!params.autoStart
+    if (!_autoStart) _hintCount = 3
     _resetProgress = !!params.reset
     _loadLevelAndStart()
   },
@@ -410,9 +457,11 @@ var GameScene = {
       var curSec = Math.ceil(_timerRemaining)
       if (curSec !== _lastDrawnSec) {
         _lastDrawnSec = curSec
+        if (curSec <= 5 && curSec > 0) sound.tick()
         mgr.requestDraw()
       }
     }
+
   },
 
   draw: function (ctx, w, h) {
@@ -506,28 +555,31 @@ var GameScene = {
       contentBottomY = h / 2 + 30
     }
 
-    var btnH = 44
-    var btnMinY = contentBottomY + 8
-    var btnMaxY = h - btnH - 16
-    var btnY = Math.min(btnMinY, btnMaxY)
-    var hintOnlyW = 140
-    var hintOnlyX = (w - hintOnlyW) / 2
+    if (_gameState === 'playing') {
+      var btnH = 44
+      var btnMinY = contentBottomY + 8
+      var btnMaxY = h - btnH - 16
+      var btnY = Math.min(btnMinY, btnMaxY)
+      var hintOnlyW = 140
+      var hintOnlyX = (w - hintOnlyW) / 2
 
-    ctx.save()
-    roundRect(ctx, hintOnlyX, btnY, hintOnlyW, btnH, btnH / 2)
-    var hasHint = _hintCount > 0
-    ctx.fillStyle = hasHint ? 'rgba(212, 168, 75, 0.12)' : 'rgba(212, 168, 75, 0.08)'
-    ctx.fill()
-    ctx.strokeStyle = hasHint ? THEME.danJin : '#B8A48C'
-    ctx.lineWidth = 1.5
-    ctx.stroke()
-    ctx.font = '15px "PingFang SC", "Microsoft YaHei", sans-serif'
-    ctx.textAlign = 'center'
-    ctx.textBaseline = 'middle'
-    ctx.fillStyle = hasHint ? THEME.danJin : '#999'
-    ctx.fillText(_hintCount > 0 ? '💡 提示' : '💡 看广告得提示', hintOnlyX + hintOnlyW / 2, btnY + btnH / 2)
-    ctx.restore()
-    _hintBtnBounds = { x: hintOnlyX, y: btnY, w: hintOnlyW, h: btnH }
+      ctx.save()
+      roundRect(ctx, hintOnlyX, btnY, hintOnlyW, btnH, btnH / 2)
+      var hasHint = _hintCount > 0
+      ctx.fillStyle = hasHint ? 'rgba(212, 168, 75, 0.12)' : 'rgba(212, 168, 75, 0.08)'
+      ctx.fill()
+      ctx.strokeStyle = hasHint ? THEME.danJin : '#B8A48C'
+      ctx.lineWidth = 1.5
+      ctx.stroke()
+      ctx.font = '15px "PingFang SC", "Microsoft YaHei", sans-serif'
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      ctx.fillStyle = hasHint ? THEME.danJin : '#999'
+      ctx.fillText(hasHint ? '💡 提示 × ' + _hintCount : '暂无更多提示', hintOnlyX + hintOnlyW / 2, btnY + btnH / 2)
+      ctx.restore()
+      _hintBtnBounds = { x: hintOnlyX, y: btnY, w: hintOnlyW, h: btnH }
+    }
+
   },
 
   onTouchEnd: function (touch, mgr) {
@@ -546,6 +598,7 @@ var GameScene = {
     if (_gameState === 'ready' && _startBtnBounds) {
       var btn = _startBtnBounds
       if (x >= btn.x && x <= btn.x + btn.w && y >= btn.y && y <= btn.y + btn.h) {
+        sound.tap()
         _gameState = 'playing'
         _startTimer()
         mgr.requestDraw()

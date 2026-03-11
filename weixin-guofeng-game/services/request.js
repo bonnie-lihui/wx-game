@@ -5,8 +5,8 @@
  * 遇到 401 时自动触发 reLogin 后重发一次原始请求。
  */
 
-// var BASE_URL = 'https://mini-game.solaboom.cn'
-var BASE_URL = 'http://localhost:5565'
+var BASE_URL = 'https://mini-game.solaboom.cn'
+// var BASE_URL = 'http://localhost:5565'
 // var BASE_URL = 'http://172.18.188.222:5565'
 var TIMEOUT = 10000
 var MAX_RETRY = 0

@@ -8,6 +8,7 @@
 var homeScene = require('./homeScene')
 var gameScene = require('./gameScene')
 var resultScene = require('./resultScene')
+var sound = require('../utils/sound')
 
 var scenes = {
   home: homeScene,
@@ -29,6 +30,16 @@ var SceneManager = {
   _modalConfig: null,
   _modalBtnBounds: null,
 
+  _fadePhase: 'none',
+  _fadeAlpha: 0,
+  _fadeStartTime: 0,
+  _fadeDuration: 220,
+  _pendingScene: null,
+  _pendingParams: null,
+
+  _musicAngle: 0,
+  _bgmActivated: false,
+
   init: function (ctx, w, h, capsuleTop, capsuleBottom) {
     this.ctx = ctx
     this.width = w
@@ -37,7 +48,7 @@ var SceneManager = {
     this.capsuleBottom = capsuleBottom || 0
   },
 
-  switchTo: function (sceneName, params) {
+  _immediateSwitch: function (sceneName, params) {
     if (this.current && this.current.onLeave) {
       this.current.onLeave()
     }
@@ -49,6 +60,21 @@ var SceneManager = {
     if (this.current && this.current.onEnter) {
       this.current.onEnter(params || {}, this)
     }
+  },
+
+  switchTo: function (sceneName, params) {
+    if (!this.current) {
+      this._immediateSwitch(sceneName, params)
+      return
+    }
+    if (this._fadePhase !== 'none') return
+
+    this._pendingScene = sceneName
+    this._pendingParams = params || {}
+    this._fadePhase = 'out'
+    this._fadeStartTime = Date.now()
+    this._fadeAlpha = 0
+    this._needsDraw = true
   },
 
   requestDraw: function () {
@@ -82,6 +108,10 @@ var SceneManager = {
       this.current.draw(ctx, w, h)
     }
 
+    if (this.currentName === 'home') {
+      this._drawMusicBtn(ctx, w, h)
+    }
+
     if (this._toastText && Date.now() < this._toastEndTime) {
       this._drawToast(ctx, w, h)
     } else if (this._toastText) {
@@ -91,6 +121,13 @@ var SceneManager = {
 
     if (this._modalConfig) {
       this._drawModal(ctx, w, h)
+    }
+
+    if (this._fadeAlpha > 0) {
+      ctx.save()
+      ctx.fillStyle = 'rgba(245, 233, 214, ' + this._fadeAlpha.toFixed(3) + ')'
+      ctx.fillRect(0, 0, w, h)
+      ctx.restore()
     }
   },
 
@@ -195,23 +232,93 @@ var SceneManager = {
     ctx.restore()
   },
 
-  _wrapText: function (ctx, text, maxWidth) {
-    var lines = []
-    var line = ''
-    for (var i = 0; i < text.length; i++) {
-      var testLine = line + text[i]
-      if (ctx.measureText(testLine).width > maxWidth && line.length > 0) {
-        lines.push(line)
-        line = text[i]
-      } else {
-        line = testLine
-      }
+  _drawMusicBtn: function (ctx, w, h) {
+    var cx = w - 34
+    var cy = h - 54
+    var bgR = 20
+    var playing = sound.isBgmPlaying()
+
+    ctx.save()
+    ctx.beginPath()
+    ctx.arc(cx, cy, bgR, 0, Math.PI * 2)
+    ctx.fillStyle = playing ? 'rgba(212, 168, 75, 0.10)' : 'rgba(160, 147, 126, 0.08)'
+    ctx.fill()
+    ctx.strokeStyle = playing ? 'rgba(212, 168, 75, 0.25)' : 'rgba(160, 147, 126, 0.18)'
+    ctx.lineWidth = 1
+    ctx.stroke()
+    ctx.restore()
+
+    var color = playing ? 'rgba(139, 111, 71, 0.6)' : 'rgba(160, 147, 126, 0.32)'
+
+    ctx.save()
+    ctx.translate(cx, cy)
+    if (playing) ctx.rotate(this._musicAngle)
+
+    ctx.fillStyle = color
+    ctx.strokeStyle = color
+
+    ctx.save()
+    ctx.translate(-3, 5)
+    ctx.rotate(-0.3)
+    ctx.scale(1, 0.72)
+    ctx.beginPath()
+    ctx.arc(0, 0, 5, 0, Math.PI * 2)
+    ctx.fill()
+    ctx.restore()
+
+    ctx.fillRect(1.5, -12, 2, 17)
+
+    ctx.beginPath()
+    ctx.moveTo(3.5, -12)
+    ctx.quadraticCurveTo(10, -8, 3.5, -3)
+    ctx.lineWidth = 2.2
+    ctx.stroke()
+
+    ctx.restore()
+
+    if (!playing) {
+      ctx.save()
+      ctx.globalAlpha = 0.4
+      ctx.strokeStyle = '#A0937E'
+      ctx.lineWidth = 1.5
+      ctx.lineCap = 'round'
+      ctx.beginPath()
+      ctx.moveTo(cx - 8, cy + 10)
+      ctx.lineTo(cx + 8, cy - 10)
+      ctx.stroke()
+      ctx.restore()
     }
-    if (line) lines.push(line)
+  },
+
+  _wrapText: function (ctx, text, maxWidth) {
+    var segments = text.split('\n')
+    var lines = []
+    for (var s = 0; s < segments.length; s++) {
+      var seg = segments[s]
+      var line = ''
+      for (var i = 0; i < seg.length; i++) {
+        var testLine = line + seg[i]
+        if (ctx.measureText(testLine).width > maxWidth && line.length > 0) {
+          lines.push(line)
+          line = seg[i]
+        } else {
+          line = testLine
+        }
+      }
+      lines.push(line)
+    }
     return lines
   },
 
   onTouchStart: function (touch) {
+    if (!this._bgmActivated) {
+      this._bgmActivated = true
+      var dx = touch.x - (this.width - 34)
+      var dy = touch.y - (this.height - 54)
+      if (dx * dx + dy * dy > 900 && sound.isBgmPlaying()) {
+        sound.startBgm()
+      }
+    }
     if (this._modalConfig) return
     if (this.current && this.current.onTouchStart) {
       this.current.onTouchStart(touch, this)
@@ -226,6 +333,17 @@ var SceneManager = {
   },
 
   onTouchEnd: function (touch) {
+    if (this.currentName === 'home') {
+      var mdx = touch.x - (this.width - 34)
+      var mdy = touch.y - (this.height - 54)
+      if (mdx * mdx + mdy * mdy <= 900) {
+        if (!this._bgmActivated) this._bgmActivated = true
+        sound.toggleBgm()
+        this._needsDraw = true
+        return
+      }
+    }
+
     if (this._modalConfig) {
       if (this._modalBtnBounds) {
         var b = this._modalBtnBounds
@@ -243,6 +361,31 @@ var SceneManager = {
   },
 
   update: function (dt) {
+    if (this._fadePhase !== 'none') {
+      var elapsed = Date.now() - this._fadeStartTime
+      if (this._fadePhase === 'out') {
+        this._fadeAlpha = Math.min(1, elapsed / this._fadeDuration)
+        if (elapsed >= this._fadeDuration) {
+          this._immediateSwitch(this._pendingScene, this._pendingParams)
+          this._fadePhase = 'in'
+          this._fadeStartTime = Date.now()
+          this._fadeAlpha = 1
+        }
+      } else if (this._fadePhase === 'in') {
+        this._fadeAlpha = Math.max(0, 1 - elapsed / this._fadeDuration)
+        if (elapsed >= this._fadeDuration) {
+          this._fadePhase = 'none'
+          this._fadeAlpha = 0
+        }
+      }
+      this._needsDraw = true
+    }
+
+    if (sound.isBgmPlaying()) {
+      this._musicAngle = (this._musicAngle + dt * 0.001) % (Math.PI * 2)
+      this._needsDraw = true
+    }
+
     if (this._toastText && Date.now() >= this._toastEndTime) {
       this._toastText = ''
       this._needsDraw = true

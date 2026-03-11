@@ -4,6 +4,8 @@
 
 var constants = require('../engine/constants')
 var inkStyle = require('../engine/inkStyle')
+var sound = require('../utils/sound')
+var animation = require('../engine/animation')
 
 var THEME = constants.THEME
 var GAME_NAMES = constants.GAME_NAMES
@@ -28,6 +30,9 @@ var _backBtnBounds = null
 var _capsuleTop = 0
 var _capsuleBottom = 0
 
+var _particles = null
+var _particleStartTime = 0
+
 var ResultScene = {
   onEnter: function (params, mgr) {
     _mgr = mgr
@@ -42,12 +47,28 @@ var ResultScene = {
     _mainBtnBounds = null
     _homeBtnBounds = null
     _backBtnBounds = null
+
+    if (_success) {
+      var _w = mgr.width, _h = mgr.height
+      var _capBottom = mgr.capsuleBottom || 0
+      var _barBottom = _capBottom + 10
+      var _hasTime = !!(_total > 0)
+      var _cardH = _hasTime ? 290 : 260
+      var _totalH = _cardH + 28 + 50 + 24 + 28
+      var _availH = _h - _barBottom
+      var _emojiY = _barBottom + (_availH - _totalH) * 0.3 + 38
+      _particles = animation.createPassParticles(_w, _h, _w / 2, _emojiY)
+      _particleStartTime = Date.now()
+    } else {
+      _particles = null
+    }
   },
 
   onLeave: function () {
     _mainBtnBounds = null
     _homeBtnBounds = null
     _backBtnBounds = null
+    _particles = null
   },
 
   draw: function (ctx, w, h) {
@@ -197,6 +218,16 @@ var ResultScene = {
     ctx.restore()
 
     _homeBtnBounds = { x: centerX - 50, y: homeLinkY - 16, w: 100, h: 32 }
+
+    if (_particles && !animation.isPassAnimDone(_particles)) {
+      animation.updateAndDrawPassParticles(ctx, _particles, 16)
+    }
+  },
+
+  update: function (dt, mgr) {
+    if (_particles && !animation.isPassAnimDone(_particles)) {
+      mgr.requestDraw()
+    }
   },
 
   onTouchEnd: function (touch, mgr) {
@@ -214,7 +245,8 @@ var ResultScene = {
     if (_mainBtnBounds) {
       var b = _mainBtnBounds
       if (x >= b.x && x <= b.x + b.w && y >= b.y && y <= b.y + b.h) {
-        var nextLevel = _success ? _level + 1 : 1
+        sound.tap()
+        var nextLevel = _success ? _level + 1 : _level
         mgr.switchTo('game', { gameId: _gameId, level: nextLevel, autoStart: true })
         return
       }
@@ -223,6 +255,7 @@ var ResultScene = {
     if (_homeBtnBounds) {
       var h = _homeBtnBounds
       if (x >= h.x && x <= h.x + h.w && y >= h.y && y <= h.y + h.h) {
+        sound.tap()
         mgr.switchTo('home')
         return
       }

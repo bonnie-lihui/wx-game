@@ -13,7 +13,6 @@ var SceneManager = require('./scenes/sceneManager')
 var auth = require('./utils/auth')
 var share = require('./utils/share')
 var wxCap = require('./utils/wxCapabilities')
-
 var canvas = wx.createCanvas()
 var ctx = canvas.getContext('2d')
 var sysInfo = wx.getSystemInfoSync()
