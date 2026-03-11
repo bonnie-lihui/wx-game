@@ -1,29 +1,32 @@
 /**
- * 用户表操作：进度、解锁状态 CRUD
- * 说明：移除了未使用的分享记录功能；session_key 落库前经 AES-256-GCM 加密
+ * 用户表操作
+ * session_key 落库前经 AES-256-GCM 加密
  * @file server/model/userModel.js
  */
 
 const pool = require('./pool');
 const { encryptSessionKey } = require('../utils/sessionKeyCrypto');
 
+const VALID_PLATFORMS = ['wx', 'tiktok', 'others'];
+
 /**
  * 初始化/获取用户
  * @param {string} openid
  * @param {string} [nickname]
- * @param {string} [sessionKey] - 微信 session_key
+ * @param {string} [sessionKey]
+ * @param {string} [platform] - wx | tiktok | others
  * @returns {Promise<Object>}
  */
-async function findOrCreate(openid, nickname, sessionKey) {
+async function findOrCreate(openid, nickname, sessionKey, platform) {
   const [rows] = await pool.query(
-    'SELECT id, openid, nickname, avatar, unlock_game, unlock_theme, max_score, hidden_unlock FROM t_user WHERE openid = ?',
+    'SELECT id, openid, nickname, avatar, platform FROM t_user WHERE openid = ?',
     [openid]
   );
   if (rows && rows.length > 0) {
     const u = rows[0];
     const updates = [];
     const params = [];
-    
+
     if (nickname && u.nickname !== nickname) {
       updates.push('nickname = ?');
       params.push(nickname);
@@ -32,68 +35,53 @@ async function findOrCreate(openid, nickname, sessionKey) {
       updates.push('session_key = ?');
       params.push(encryptSessionKey(sessionKey));
     }
-    
+    if (platform && VALID_PLATFORMS.includes(platform) && u.platform !== platform) {
+      updates.push('platform = ?');
+      params.push(platform);
+    }
+
     if (updates.length > 0) {
       updates.push('update_time = NOW()');
       params.push(openid);
       await pool.query(`UPDATE t_user SET ${updates.join(', ')} WHERE openid = ?`, params);
       if (nickname) u.nickname = nickname;
+      if (platform && VALID_PLATFORMS.includes(platform)) u.platform = platform;
     }
-    
+
     return normalizeUser(u);
   }
+
   const storedSessionKey = sessionKey ? encryptSessionKey(sessionKey) : null;
+  const safePlatform = VALID_PLATFORMS.includes(platform) ? platform : 'wx';
   await pool.query(
-    'INSERT INTO t_user (openid, nickname, session_key, unlock_game, unlock_theme, max_score) VALUES (?, ?, ?, ?, ?, ?)',
-    [openid, nickname || '', storedSessionKey, '[]', '[]', '{}']
+    'INSERT INTO t_user (openid, nickname, session_key, platform) VALUES (?, ?, ?, ?)',
+    [openid, nickname || '', storedSessionKey, safePlatform]
   );
-  return findOrCreate(openid, nickname, sessionKey);
+  return findOrCreate(openid, nickname, sessionKey, platform);
 }
 
 function normalizeUser(row) {
   if (!row) return null;
-  let unlock_game = [];
-  let unlock_theme = [];
-  let max_score = {};
-  try {
-    if (row.unlock_game) unlock_game = JSON.parse(row.unlock_game);
-  } catch (e) {}
-  try {
-    if (row.unlock_theme) unlock_theme = JSON.parse(row.unlock_theme);
-  } catch (e) {}
-  try {
-    if (row.max_score) max_score = JSON.parse(row.max_score);
-  } catch (e) {}
   return {
     id: row.id,
     openid: row.openid,
     nickname: row.nickname,
     avatar: row.avatar,
-    unlock_game,
-    unlock_theme,
-    max_score,
-    hidden_unlock: row.hidden_unlock === 1,
+    platform: row.platform || 'wx',
   };
 }
 
 /**
- * 保存进度
+ * 保存进度（写入 t_user_progress 表）
  * @param {string} openid
  * @param {string} gameId
  * @param {number} level
  * @param {number} [score]
  */
 async function saveProgress(openid, gameId, level, score) {
-  const user = await findOrCreate(openid);
-  const max_score = user.max_score || {};
-  const key = gameId;
-  const prev = max_score[key];
-  if (score != null && (prev == null || score > prev)) {
-    max_score[key] = score;
-  }
   await pool.query(
-    'UPDATE t_user SET unlock_game = ?, max_score = ?, update_time = NOW() WHERE openid = ?',
-    [JSON.stringify(user.unlock_game), JSON.stringify(max_score), openid]
+    'UPDATE t_user SET update_time = NOW() WHERE openid = ?',
+    [openid]
   );
   await pool.query(
     'INSERT INTO t_user_progress (openid, game_id, level, score) VALUES (?, ?, ?, ?) ON DUPLICATE KEY UPDATE level = ?, score = ?',
@@ -102,63 +90,28 @@ async function saveProgress(openid, gameId, level, score) {
 }
 
 /**
- * 解锁玩法
- * @param {string} openid
- * @param {string} gameId
- * @param {string} type - game | theme
- */
-async function unlockGame(openid, gameId, type) {
-  const user = await findOrCreate(openid);
-  if (type === 'theme') {
-    if (!user.unlock_theme.includes(gameId)) user.unlock_theme.push(gameId);
-  } else {
-    if (!user.unlock_game.includes(gameId)) user.unlock_game.push(gameId);
-  }
-  await pool.query(
-    'UPDATE t_user SET unlock_game = ?, unlock_theme = ?, update_time = NOW() WHERE openid = ?',
-    [JSON.stringify(user.unlock_game), JSON.stringify(user.unlock_theme), openid]
-  );
-  return { unlock_game: user.unlock_game, unlock_theme: user.unlock_theme };
-}
-
-/**
- * 解锁隐藏玩法
- * @param {string} openid
- */
-async function unlockHidden(openid) {
-  const [rows] = await pool.query('SELECT hidden_unlock FROM t_user WHERE openid = ?', [openid]);
-  const hidden = rows && rows[0] && rows[0].hidden_unlock === 1;
-  if (!hidden) {
-    await pool.query('UPDATE t_user SET hidden_unlock = 1, update_time = NOW() WHERE openid = ?', [openid]);
-  }
-  return { hidden: true };
-}
-
-/**
  * 微信登录 - 保存用户信息和 session_key
  * @param {string} openid
  * @param {string} sessionKey
  * @param {string} [nickname]
  * @param {string} [avatar]
+ * @param {string} [platform] - wx | tiktok | others
  * @returns {Promise<Object>}
  */
-async function wxLogin(openid, sessionKey, nickname, avatar) {
-  const user = await findOrCreate(openid, nickname, sessionKey);
-  
-  // 如果传入了头像，也更新头像
+async function wxLogin(openid, sessionKey, nickname, avatar, platform) {
+  const user = await findOrCreate(openid, nickname, sessionKey, platform);
+
   if (avatar && user.avatar !== avatar) {
     await pool.query('UPDATE t_user SET avatar = ?, update_time = NOW() WHERE openid = ?', [avatar, openid]);
     user.avatar = avatar;
   }
-  
+
   return user;
 }
 
 module.exports = {
   findOrCreate,
   saveProgress,
-  unlockGame,
-  unlockHidden,
   wxLogin,
 };
 

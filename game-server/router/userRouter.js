@@ -10,10 +10,9 @@ const rateLimitWxLogin = require('../middleware/rateLimitWxLogin');
 const router = express.Router();
 
 router.post('/wxLogin', rateLimitWxLogin, userController.wxLogin);
+router.post('/tiktokLogin', rateLimitWxLogin, userController.tiktokLogin);
+router.post('/ttLogin', rateLimitWxLogin, userController.tiktokLogin);
 router.post('/init', userController.init);
 router.post('/saveProgress', userController.saveProgress);
-router.post('/unlockGame', userController.unlockGame);
-router.post('/unlockHidden', userController.unlockHidden);
-router.post('/shareSuccess', userController.shareSuccess);
 
 module.exports = router;

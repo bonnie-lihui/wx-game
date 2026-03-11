@@ -32,10 +32,16 @@ module.exports = {
 
   /** 微信小程序配置 - 用于无感登录 */
   wechat: {
-    appId: process.env.WX_APPID || 'wx03502f6933e2d06e',
-    appSecret: process.env.WX_APP_SECRET || '64c9da5645bf7f5eb3bedb87a4bce629',
+    appId: process.env.WX_APPID || 'wx6bf6458487991f97',
+    appSecret: process.env.WX_APP_SECRET || 'aff39c2bf45cb1a64a74a6555fc0a4c2',
+  },
+
+  /** 抖音小程序配置 - 用于无感登录 */
+  tiktok: {
+    appId: process.env.TT_APPID || 'tt6ddf1b62f3bf327902',
+    appSecret: process.env.TT_APP_SECRET || '128d1422ea3e64e1f040b6a9929de3dc9cb30fab',
   },
 
   /** 你的服务器域名（用于 CORS 等） */
-  serverDomain: process.env.SERVER_DOMAIN || 'https://your-domain.com',
+  serverDomain: process.env.SERVER_DOMAIN || 'https://mini-game.solaboom.cn',
 };
