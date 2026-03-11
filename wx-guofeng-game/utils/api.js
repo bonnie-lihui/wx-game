@@ -8,7 +8,7 @@ const game = require('../game.js');
 const GAME_CONFIG = game.GLOBAL_CONFIG || {};
 
 /** 接口基础地址 - 与 game.js 中保持一致，便于统一替换 */
-const BASE_URL = GAME_CONFIG.API_BASE || 'https://your-domain.com';
+const BASE_URL = GAME_CONFIG.API_BASE || 'https://mini-game.solaboom.cn';
 
 /** 超时时间(ms)，默认 10s */
 const TIMEOUT = GAME_CONFIG.REQUEST_TIMEOUT || 10000;

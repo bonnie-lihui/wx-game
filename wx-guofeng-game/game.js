@@ -7,8 +7,8 @@
 // ========== 全局配置（可在此调整） ==========
 const GLOBAL_CONFIG = {
   /** 后端接口基础域名 - 【自有域名替换位】替换为你的服务器域名，如 https://api.yourdomain.com */
-  // API_BASE: 'https://mini-game.solaboom.cn',
-  API_BASE: 'http://localhost:5565',
+  API_BASE: 'https://mini-game.solaboom.cn',
+  // API_BASE: 'http://localhost:5565',
   /** 默认超时(ms) */
   REQUEST_TIMEOUT: 10000,
   /** 插屏广告展示间隔(分钟) */

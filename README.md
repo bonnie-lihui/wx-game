@@ -17,7 +17,7 @@
 
 ```
 vx-game/
-├── minigame/          # 小程序前端
+├── wx-guofeng-game/   # 小程序前端
 │   ├── pages/        # 页面
 │   ├── gameLogic/    # 游戏逻辑
 │   └── utils/        # 工具函数
@@ -39,7 +39,7 @@ vx-game/
 ### 前端（小程序）
 ```bash
 # 1. 打开微信开发者工具
-# 2. 导入 minigame 目录
+# 2. 导入 wx-guofeng-game 目录
 # 3. 配置 AppID
 # 4. 点击编译
 ```

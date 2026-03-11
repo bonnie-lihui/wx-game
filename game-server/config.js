@@ -33,7 +33,7 @@ module.exports = {
   /** 微信小程序配置 - 用于无感登录 */
   wechat: {
     appId: process.env.WX_APPID || 'wx6bf6458487991f97',
-    appSecret: process.env.WX_APP_SECRET || 'aff39c2bf45cb1a64a74a6555fc0a4c2',
+    appSecret: process.env.WX_APP_SECRET || '856663d4afc5792f7c023f0ea1096d60',
   },
 
   /** 抖音小程序配置 - 用于无感登录 */
